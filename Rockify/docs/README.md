@@ -13,3 +13,10 @@ Rockify is a web application inspired by Spotify built using Ruby on Rails and R
 - [] Search
 - [] Continuous play while navigating site
 - [] Following playlists/Friending users
+
+## Design Docs
+* [View Wireframes][wireframes]
+* [React Components][components]
+* [API endpoints][api-endpoints]
+* [DB schema][docs/schema]
+* [Sample State][sample-state]

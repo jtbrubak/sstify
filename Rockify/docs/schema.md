@@ -43,14 +43,14 @@ id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
 
-##playlist_follows
+## playlist_follows
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
 playlist_id | integer   | not null, foreign key (references playlists), indexed
 
-##playlist_tracks
+## playlist_tracks
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -58,7 +58,7 @@ track_id    | integer   | not null, foreign key (references tracks), indexed
 playlist_id | integer   | not null, foreign key (references playlists), indexed
 playlist_ord| integer   | not null
 
-##user_follows
+## user_follows
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key

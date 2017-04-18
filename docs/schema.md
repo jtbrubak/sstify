@@ -32,7 +32,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 album_id  | integer   | not null, foreign key (references releases), indexed
 title       | string    | not null
-release_ord | integer   | not null
+album_ord | integer   | not null
 track_url   | string    | not null
 
 ## playlists

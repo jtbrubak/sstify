@@ -7,9 +7,11 @@
   overflow: auto;
   background-image: url('http://cdn.wallpapersafari.com/77/34/HjaoFp.jpg');
   background-size: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .login-form-box {
   background-color: white;
-
+  display: inline;
 }

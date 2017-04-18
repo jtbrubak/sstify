@@ -17,13 +17,12 @@ name        | string    | not null
 image_url   | string    | not null
 bio         | text      | not null
 
-## releases
+## albums
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 artist_id   | integer   | not null, foreign key (references artists), indexed
 title       | integer   | not null
-type        | string    | not null, inclusion in: [album, compilation, single]
 image_url   | string    | not null
 year        | integer   | not null
 
@@ -31,9 +30,9 @@ year        | integer   | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-release_id  | integer   | not null, foreign key (references releases), indexed
+album_id  | integer   | not null, foreign key (references releases), indexed
 title       | string    | not null
-release_ord | integer   | not null
+album_ord | integer   | not null
 track_url   | string    | not null
 
 ## playlists

@@ -22,10 +22,10 @@
 - `GET /api/artists`
 - `GET /api/artists/:id`
 
-### Releases
+### Albums
 
-- `GET /api/artists/:id/releases` - gets all releases for given artist
-- `GET /api/artists/:id/releases/:id` - gets details for specific release
+- `GET /api/albums` - gets all releases for given artist
+- `GET /api/albums/:id` - gets details for specific release
 
 ### Playlists
 

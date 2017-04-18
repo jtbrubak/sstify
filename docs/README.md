@@ -27,9 +27,9 @@ Rockify is a web application inspired by Spotify built using Ruby on Rails and R
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Landing page, artist, and release views (2 days)
+### Phase 2: Landing page, artist, and album views (2 days)
 
-**Objective:** Users can navigate to root page, artist pages, and releases pages
+**Objective:** Users can navigate to root page, artist pages, and album pages
 
 ### Phase 3: Playlist CRUD (1 day)
 
@@ -45,7 +45,7 @@ Rockify is a web application inspired by Spotify built using Ruby on Rails and R
 
 ### Phase 6: - Search (1 day)
 
-**Objective:** Users can search for users, artists, releases, songs, and playlists.
+**Objective:** Users can search for users, artists, albums, songs, and playlists.
 
 ### Bonus Features (TBD)
 - [ ] Radio (shuffle play)

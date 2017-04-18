@@ -5,13 +5,24 @@
   bottom: 0;
   right: 0;
   overflow: auto;
-  background-image: url('http://cdn.wallpapersafari.com/77/34/HjaoFp.jpg');
+  background: black;
   background-size: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .login-form-box {
-  background-color: white;
-  display: inline;
+  color: white;
+}
+
+.login-form-box input[type="text"], .login-form-box input[type="password"] {
+  color: white;
+  background: none;
+  margin: 10px 10px 10px 0px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+  width: 100%
 }

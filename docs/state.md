@@ -21,8 +21,8 @@
     title: 'Helicopter',
     artist_id: 1,
     artist: 'Deerhunter',
-    release_id: 1,
-    release: 'Halcyon Digest'
+    album_id: 1,
+    album: 'Halcyon Digest'
   }
   userDetail: {
     id: 2,
@@ -58,7 +58,7 @@
     name: 'Deerhunter',
     image_url: 'http://image',
     bio: 'Good band',
-    releases: [
+    albums: [
       {
         id: 1,
         title: 'Halcyon Digest',
@@ -69,13 +69,13 @@
           {
             id: 1,
             title: 'Earthquake',
-            release_ord: 1,
+            album_ord: 1,
             track_url: 'http://music'
           },
           {
             id: 2,
             title: 'Don\'t Cry',
-            release_ord: 2,
+            album_ord: 2,
             track_url: 'http://music'
           }
           ...
@@ -83,7 +83,7 @@
       }
     ],
   },
-  releaseDetail: {
+  albumDetail: {
     id: 1,
     artist_id: 1,
     artist: 'Deerhunter',
@@ -94,13 +94,13 @@
       {
         id: 1,
         title: 'Earthquake',
-        release_ord: 1,
+        album_ord: 1,
         track_url: 'http://music'
       },
       {
         id: 2,
         title: 'Don\'t Cry',
-        release_ord: 2,
+        album_ord: 2,
         track_url: 'http://music'
       }
       ...

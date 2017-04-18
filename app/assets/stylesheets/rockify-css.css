@@ -1,0 +1,15 @@
+.login-form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background-image: url('http://cdn.wallpapersafari.com/77/34/HjaoFp.jpg');
+  background-size: 100%;
+}
+
+.login-form-box {
+  background-color: white;
+
+}

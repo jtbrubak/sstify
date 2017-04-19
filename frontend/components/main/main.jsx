@@ -2,9 +2,20 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 
 class Main extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.props.logout().then(() => this.props.router.replace('/'));
+  }
+
   render() {
     return (
-      <h1>YO</h1>
+      <button onClick={this.handleClick}>Log Out</button>
     );
   }
 }

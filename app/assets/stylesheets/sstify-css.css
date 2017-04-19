@@ -1,0 +1,123 @@
+.login-form-container {
+  font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background: black;
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form-box {
+  color: white;
+  width: 20%;
+  padding-right: 30px;
+  border-right: 2px solid gray;
+}
+
+.login-form-box input[type="text"], .login-form-box input[type="password"] {
+  color: white;
+  background: none;
+  margin: 10px 10px 10px 0px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+  width: 100%;
+  font-size: 15px;
+}
+
+.login-form-box input[type="submit"] {
+  background-color: Transparent;
+  color: white;
+  border-radius: 50px;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 10px 0px 10px 0px;
+}
+
+.login-form-box button {
+  background-color: Transparent;
+  color: white;
+  border-radius: 50px;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 10px 0px 10px 0px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.logo img {
+  height: 50px;
+  width: 50px;
+}
+
+.logo span {
+  margin-left: 15px;
+  color: #1aff66;
+  font-size: 24px;
+}
+
+.login-form-label {
+  font-size: 12px;
+  color: gray;
+}
+
+.form-change-link {
+  font-size: 10px;
+  color: gray;
+  text-decoration: none;
+  margin-left: 65px;
+}
+
+.form-change-link:hover {
+  text-decoration: underline;
+}
+
+.form-error {
+  color: red;
+  font-size: 10px;
+  text-align: center;
+}
+
+.app-description {
+  padding-left: 20px;
+  width: 25%;
+}
+
+.app-description h1 {
+  color: #1aff66;
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+
+.app-description h3 {
+  color: white;
+  padding-bottom: 20px;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.app-description li {
+  color: white;
+  font-size: 20px;
+}
+
+.app-description li:before {
+  content: "\2713\0020";
+}

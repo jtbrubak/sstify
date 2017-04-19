@@ -6,7 +6,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 // components
 import SessionFormContainer from './session_form/session_form_container';
-import Main from './main/main';
+import MainContainer from './main/main_container';
 
 const Root = ({ store }) => {
 
@@ -40,7 +40,7 @@ const Root = ({ store }) => {
           <IndexRoute onEnter={_redirect} />
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-          <Route path="/main" component={Main} onEnter={_ensureLoggedIn}>
+          <Route path="/main" component={MainContainer} onEnter={_ensureLoggedIn}>
           </Route>
         </Route>
       </Router>

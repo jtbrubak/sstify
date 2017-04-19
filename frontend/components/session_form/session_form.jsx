@@ -6,11 +6,20 @@ class SessionForm extends React.Component {
 		super(props);
 		this.state = { username: "", password: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
+    this.handleError = this.handleError.bind(this);
 	}
 
 	componentDidUpdate() {
 		this.redirectIfLoggedIn();
 	}
+
+  handleError(error) {
+    if (error === "Password digest can't be blank") {
+      return "Password can't be blank";
+    }
+    return error;
+  }
 
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
@@ -30,20 +39,31 @@ class SessionForm extends React.Component {
 		this.props.processForm({user});
 	}
 
+  handleGuestLogin(e) {
+    e.preventDefault();
+    this.props.guestLogin();
+  }
+
 	navLink() {
 		if (this.props.formType === "login") {
-			return <Link to="/signup">Don't have an account? Sign up here!</Link>;
+			return <Link to="/signup" className='form-change-link'>Don't have an account? Sign up here!</Link>;
 		} else {
-			return <Link to="/login">Already have an account? Log in here!</Link>;
+			return <Link to="/login" className='form-change-link'>Already have an account? Log in here!</Link>;
 		}
 	}
+
+  renderGuestLogin() {
+    if (this.props.formType === "asdasd") {
+      return <button onClick={this.handleGuestLogin}>GUEST LOGIN</button>;
+    }
+  }
 
 	renderErrors() {
 		return(
 			<ul>
 				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>
-						{error}
+					<li className='form-error' key={`error-${i}`}>
+						{this.handleError(error)}
 					</li>
 				))}
 			</ul>
@@ -54,19 +74,21 @@ class SessionForm extends React.Component {
 		return (
 			<div className="login-form-container fullscreen">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					{this.navLink()}
+          <div className='logo'>
+            <img src="http://imgur.com/vmOaIbJ.png"/><span>SSTify</span>
+          </div>
 					{this.renderErrors()}
 					<div className="login-form">
 						<br/>
-						<label> Username<br/>
+						<label className="login-form-label"> Username<br/>
 							<input type="text"
 								value={this.state.username}
-                placeholder="Spotify username"
+                placeholder="SSTify username"
 								onChange={this.update("username")}
 								className="login-input" />
 						</label>
 						<br/>
-						<label> Password<br/>
+						<label className="login-form-label"> Password<br/>
 							<input type="password"
 								value={this.state.password}
                 placeholder="Password"
@@ -75,8 +97,19 @@ class SessionForm extends React.Component {
 						</label>
 						<br/>
 						<input type="submit" value={this.props.formType.toUpperCase()} />
+            <br/>
+            {this.renderGuestLogin()}
+            {this.navLink()}
 					</div>
 				</form>
+        <div className="app-description">
+          <h1>Get the right music, right now</h1><br/>
+          <h3>Listen to the legendary SST Records catalog for free.</h3><br/>
+          <ul>
+            <li>Search & discover music you'll love</li>
+            <li>Create playlists of your favorite music</li>
+          </ul>
+        </div>
 			</div>
 		);
 	}

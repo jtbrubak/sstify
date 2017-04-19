@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { login, logout, signup, receiveCurrentUser } from '../../actions/session_actions';
+import { login, logout, signup, receiveCurrentUser, receiveErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 
@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
   return {
     processForm: user => dispatch(processForm(user)),
     formType,
-    guestLogin: () => dispatch(receiveCurrentUser({ username: 'guest', id: 0 }))
+    clearErrors: () => dispatch(receiveErrors([]))
   };
 };
 

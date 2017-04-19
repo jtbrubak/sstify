@@ -41,19 +41,20 @@ class SessionForm extends React.Component {
 
   handleGuestLogin(e) {
     e.preventDefault();
-    this.props.guestLogin();
+    const user = { username: 'guest', password: 'password' };
+    this.props.processForm({ user });
   }
 
 	navLink() {
 		if (this.props.formType === "login") {
-			return <Link to="/signup" className='form-change-link'>Don't have an account? Sign up here!</Link>;
+			return <Link to="/signup" className='form-change-link' onClick={this.props.clearErrors}>Don't have an account? Sign up here!</Link>;
 		} else {
-			return <Link to="/login" className='form-change-link'>Already have an account? Log in here!</Link>;
+			return <Link to="/login" className='form-change-link' onClick={this.props.clearErrors}>Already have an account? Log in here!</Link>;
 		}
 	}
 
   renderGuestLogin() {
-    if (this.props.formType === "asdasd") {
+    if (this.props.formType === "login") {
       return <button onClick={this.handleGuestLogin}>GUEST LOGIN</button>;
     }
   }

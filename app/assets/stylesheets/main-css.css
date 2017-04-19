@@ -1,0 +1,44 @@
+.main-container {
+  font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background-size: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.top-side-elements {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  height: 80%;
+  width: 100%
+}
+
+.bottom-side-elements {
+  height: 90px;
+  width: 100%;
+  background-color: #353131;
+}
+
+.sidebar {
+  height: 100%;
+  width: 220px;
+  background-color: #161616;
+}
+
+.playbar {
+  height: 100%;
+  background-color: ;
+  color: white;
+}
+
+.content-container {
+  flex: 1;
+  width: 85%;
+}

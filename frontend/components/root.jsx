@@ -7,6 +7,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 // components
 import SessionFormContainer from './session_form/session_form_container';
 import MainContainer from './main/main_container';
+import BrowseContainer from './browse/browse_container';
 
 const Root = ({ store }) => {
 
@@ -20,14 +21,14 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/main');
+      replace('/browse');
     }
   }
 
   const _redirect = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/main');
+      replace('/browse');
     } else {
       replace('/login');
     }
@@ -41,6 +42,7 @@ const Root = ({ store }) => {
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/main" component={MainContainer} onEnter={_ensureLoggedIn}>
+            <Route path="/browse" component={BrowseContainer}/>
           </Route>
         </Route>
       </Router>

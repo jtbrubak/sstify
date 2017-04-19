@@ -8,6 +8,7 @@ class SessionForm extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
     this.handleError = this.handleError.bind(this);
+    this.handleSwitch = this.handleSwitch.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -45,11 +46,16 @@ class SessionForm extends React.Component {
     this.props.processForm({ user });
   }
 
+  handleSwitch() {
+    this.props.clearErrors();
+    this.setState({ username: "", password: "" });
+  }
+
 	navLink() {
 		if (this.props.formType === "login") {
-			return <Link to="/signup" className='form-change-link' onClick={this.props.clearErrors}>Don't have an account? Sign up here!</Link>;
+			return <Link to="/signup" className='form-change-link' onClick={this.handleSwitch}>Don't have an account? Sign up here!</Link>;
 		} else {
-			return <Link to="/login" className='form-change-link' onClick={this.props.clearErrors}>Already have an account? Log in here!</Link>;
+			return <Link to="/login" className='form-change-link' onClick={this.handleSwitch}>Already have an account? Log in here!</Link>;
 		}
 	}
 

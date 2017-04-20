@@ -1,9 +1,13 @@
 import React from 'react';
 
-class Browse extends React.Component {
+class AlbumDetail extends React.Component {
 
   constructor(props) {
     super(props);
+  }
+
+  componentWillMount() {
+    
   }
 
   render() {
@@ -15,4 +19,4 @@ class Browse extends React.Component {
   }
 }
 
-export default Browse;
+export default AlbumDetail;

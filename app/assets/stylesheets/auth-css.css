@@ -20,6 +20,9 @@
   width: 20%;
   padding-right: 30px;
   border-right: 2px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .login-form-box input[type="text"], .login-form-box input[type="password"] {
@@ -75,16 +78,24 @@
   font-size: 24px;
 }
 
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .login-form-label {
   font-size: 12px;
   color: gray;
+  width: 100%
 }
 
 .form-change-link {
   font-size: 10px;
   color: gray;
   text-decoration: none;
-  margin-left: 65px;
+  align: center;
 }
 
 .form-change-link:hover {

@@ -8,6 +8,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import SessionFormContainer from './session_form/session_form_container';
 import MainContainer from './main/main_container';
 import BrowseContainer from './browse/browse_container';
+import AlbumDetailContainer from './album_detail/album_detail_container';
 
 const Root = ({ store }) => {
 
@@ -43,6 +44,7 @@ const Root = ({ store }) => {
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/main" component={MainContainer} onEnter={_ensureLoggedIn}>
             <Route path="/browse" component={BrowseContainer}/>
+            <Route path="/albums/:id" component={AlbumDetailContainer}/>
           </Route>
         </Route>
       </Router>

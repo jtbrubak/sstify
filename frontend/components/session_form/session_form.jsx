@@ -82,7 +82,7 @@ class SessionForm extends React.Component {
 			<div className="login-form-container fullscreen">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
           <div className='logo'>
-            <img src="http://imgur.com/vmOaIbJ.png"/><span>SSTify</span>
+            <img src="https://s3.amazonaws.com/sstify-dev/images/logo.png"/><span>SSTify</span>
           </div>
 					{this.renderErrors()}
 					<div className="login-form">

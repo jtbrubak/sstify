@@ -6,6 +6,7 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.renderUsername = this.renderUsername.bind(this);
   }
 
   handleClick(e) {
@@ -13,14 +14,23 @@ class Sidebar extends React.Component {
     this.props.logout().then(() => this.props.router.replace('/'));
   }
 
+  renderUsername() {
+    if (this.props.currentUser) {
+      return this.props.currentUser.username;
+    }
+  }
+
   render() {
     return (
       <div className="sidebar">
+        <div className="sidebar-logo">
+          <img src="https://s3.amazonaws.com/sstify-dev/images/logo.png"/><span>SSTify</span>
+        </div>
+        {this.renderUsername()}
         <button onClick={this.handleClick}>Log Out</button>
       </div>
     );
   }
-
 }
 
 export default Sidebar;

@@ -3,7 +3,7 @@ import { logout } from '../../actions/session_actions';
 import Playbar from './playbar';
 
 const mapStateToProps = (state) => ({
-  currentUser: state.currentUser
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

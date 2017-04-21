@@ -1,5 +1,3 @@
-require 'byebug'
-
 class Track < ActiveRecord::Base
   validates :album_id, :title, :album_ord, :length, presence: true
   has_attached_file :audio

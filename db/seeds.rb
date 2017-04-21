@@ -10,7 +10,7 @@ User.destroy_all
 User.create(username: 'guest', password: 'password')
 
 Artist.destroy_all
-Artist.create(name: 'Black Flag', bio: 'Pretty good band.', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/black_flag.jpg")
+Artist.create(name: 'Black Flag', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/black_flag.jpg")
 
 Album.destroy_all
 Album.create(artist: Artist.find_by_name('Black Flag'), title: 'My War', year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/my_war.jpg')

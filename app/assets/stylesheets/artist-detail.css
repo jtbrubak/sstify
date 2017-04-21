@@ -1,0 +1,24 @@
+.artist-detail {
+  width: 100%;
+}
+
+.artist-detail .banner {
+  width: 100%;
+  height: 350px;
+  position: relative;
+}
+
+.banner .artist-logo {
+  width: 100%;
+  height: 100%;
+  opacity: 0.65;
+}
+
+.banner .artist-info {
+  position: absolute;
+  top: 50px;
+  margin: auto;
+  flex: column;
+  align-items: center;
+  font-size: 48px;
+}

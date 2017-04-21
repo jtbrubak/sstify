@@ -60,7 +60,7 @@
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  margin-right: 10px;
+  margin-right: 20px;
   counter-increment: count-me;
   padding: 20px;
   display: flex;

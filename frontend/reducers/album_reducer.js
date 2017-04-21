@@ -1,5 +1,4 @@
 import { RECEIVE_ALBUM_DETAIL } from '../actions/album_actions';
-import merge from 'lodash/merge';
 
 const AlbumReducer = (state = {}, action) => {
   Object.freeze(state);

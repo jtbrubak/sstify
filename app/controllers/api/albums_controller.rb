@@ -5,7 +5,8 @@ class Api::AlbumsController < ApplicationController
     if @album
       render 'api/albums/show'
     else
+      render json: ['Not found'], status: 404
     end
   end
-  
+
 end

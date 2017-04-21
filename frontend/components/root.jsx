@@ -9,6 +9,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import MainContainer from './main/main_container';
 import BrowseContainer from './browse/browse_container';
 import AlbumDetailContainer from './album_detail/album_detail_container';
+import ArtistDetailContainer from './artist_detail/artist_detail_container';
 
 const Root = ({ store }) => {
 
@@ -45,6 +46,7 @@ const Root = ({ store }) => {
           <Route path="/main" component={MainContainer} onEnter={_ensureLoggedIn}>
             <Route path="/browse" component={BrowseContainer}/>
             <Route path="/album/:id" component={AlbumDetailContainer}/>
+            <Route path="/artist/:id" component={ArtistDetailContainer}/>
           </Route>
         </Route>
       </Router>

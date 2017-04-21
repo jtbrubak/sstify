@@ -16,7 +16,7 @@
   display: flex;
   flex: 1;
   justify-content: space-between;
-  height: 80%;
+  height: 100%;
   width: 100%
 }
 
@@ -24,12 +24,14 @@
   height: 90px;
   width: 100%;
   background-color: #353131;
+  position: fixed;
+  bottom: 0;
 }
 
 .sidebar {
   height: 100%;
   width: 220px;
-  background-color: #161616;
+  background: linear-gradient(#161616, black);
   color: white;
   display: flex;
   flex-direction: column;
@@ -45,7 +47,8 @@
 .content-box {
   flex: 1;
   width: 85%;
-  background-color: #544848;
+  background: linear-gradient(#544848, black);
+  color: white;
 }
 
 .sidebar-logo {
@@ -65,4 +68,124 @@
   margin-left: 15px;
   color: #1aff66;
   font-size: 24px;
+}
+
+.album-detail {
+  display: flex;
+}
+
+.album-detail .left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.album-detail .track-list {
+  width: 70%;
+}
+
+.album-detail .left-side img {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  size: 100%;
+  align-self: center;
+}
+
+.album-detail .left-side button {
+  width: 25%;
+  border-radius: 50px;
+  font-family: 'VegurRegular';
+  color: white;
+  background-color: #40ad59;
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 14px;
+}
+
+.album-detail .track-list {
+  margin-top: 50px;
+}
+
+.album-detail .track-list ol {
+  font-family: 'Muli';
+  color: #d7dbe2;
+  font-size: 20px;
+}
+
+.album-detail .track-list li {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  margin-right: 10px;
+  counter-increment: count-me;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.album-detail .track-list li:hover {
+  cursor: default;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.album-detail .track-list li:hover #track-title:before {
+  content: '►';
+}
+
+.track-list-right-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+.track-list-right-side .playlist-add-button {
+  background: none;
+  color: #d7dbe2;
+  border: none;
+  margin-right: 70px;
+  bottom: 10px;
+  display: hidden;
+}
+
+.track-list-right-side .playlist-add-button {
+  display: inline;
+}
+
+#track-title:before {
+  content: counter(count-me) ". ";
+  padding-right: 10px;
+  color: gray;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#track-title:hover::before {
+  content: '►';
+}
+
+#album-title {
+  font-size: 24px;
+  padding-bottom: 5px;
+}
+
+#album-info {
+  font-size: 16px;
+  color: gray;
+  font-family: 'VegurRegular';
+  font-weight: lighter;
+  padding-bottom: 10px;
+}
+
+#album-info a {
+  text-decoration: none;
+  color: gray;
+}
+
+#album-info a:hover {
+  text-decoration: underline;
 }

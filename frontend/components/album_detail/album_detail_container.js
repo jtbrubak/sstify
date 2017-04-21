@@ -4,7 +4,7 @@ import AlbumDetail from './album_detail';
 
 const mapStateToProps = (state, ownProps) => ({
   albumDetail: state.albumDetail,
-  id: ownProps.params.id
+  id: parseInt(ownProps.params.id)
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -21,7 +21,8 @@ class AlbumDetail extends React.Component {
             By <Link to={`/artist/${album.artist.id}`}>{album.artist.name}</Link><br/>
           </span>
           <span id="album-info">{album.tracks.length} SONGS</span>
-          <button>P L A Y</button>
+          <button className="play-album-button">P L A Y</button>
+          <button className="playlist-add-button">. . .</button>
         </div>
       );
     }
@@ -32,9 +33,13 @@ class AlbumDetail extends React.Component {
       return (
         <div className="track-list">
           <ol>
-            {album.tracks.map(track =>
-              <li key={track.album_ord}>
+            {album.tracks.map((track, i) =>
+              <li key={i+1}>
                 <div className="track-list-left-side">
+                  <button className='play-pause-button'>
+                    <span className='track-num'>{i+1}.</span>
+                    <span className='play-button'></span>
+                  </button>
                   <span id="track-title">{track.title}</span>
                 </div>
                 <div className="track-list-right-side">

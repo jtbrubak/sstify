@@ -44,7 +44,7 @@ const Root = ({ store }) => {
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/main" component={MainContainer} onEnter={_ensureLoggedIn}>
             <Route path="/browse" component={BrowseContainer}/>
-            <Route path="/albums/:id" component={AlbumDetailContainer}/>
+            <Route path="/album/:id" component={AlbumDetailContainer}/>
           </Route>
         </Route>
       </Router>

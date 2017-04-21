@@ -59,13 +59,17 @@ color: white !important;
 }
 
 input:-moz-placeholder { /* Firefox 18- */
-color: white !important;  
+color: white !important;
 }
 
 input::-moz-placeholder {  /* Firefox 19+ */
-color: white !important;  
+color: white !important;
 }
 
 input:-ms-input-placeholder {
-color: white !important;  
+color: white !important;
+}
+
+button:hover {
+  cursor: pointer;
 }

@@ -49,7 +49,7 @@
 .content-box {
   margin-left: 220px;
   margin-bottom: 90px;
-  width: 100% - 220px;
+  width: calc(100% - 220px);
   height: 100%;
   top: 0;
   left: 0;

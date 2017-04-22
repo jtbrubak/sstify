@@ -15,7 +15,7 @@ class Track < ActiveRecord::Base
         self.length = mp3info.length.to_i
         self.title = mp3info.tag.title
         self.album_ord = mp3info.tag.tracknum.to_i
-        # self.album = Album.find_by_title(mp3info.tag.album)
+        self.album = Album.find_by_title(mp3info.tag.album)
       end
     end
   end

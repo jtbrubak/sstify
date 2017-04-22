@@ -15,7 +15,7 @@ class AlbumDetail extends React.Component {
     if (album.image_url) {
       return (
         <div className="left-side">
-          <img src={album.image_url}/>
+          <img src={album.image_url}/><br/>
           <span id="album-title">{album.title}<br/></span>
           <span id="album-info">
             By <Link to={`/artist/${album.artist.id}`}>{album.artist.name}</Link><br/>

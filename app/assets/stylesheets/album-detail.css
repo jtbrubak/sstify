@@ -1,5 +1,6 @@
 .album-detail {
   display: flex;
+  align-items: space-between;
 }
 
 .album-detail .left-side {
@@ -8,6 +9,8 @@
   align-items: center;
   justify-content: space-around;
   width: 30%;
+  height: 100%;
+  flex: 1;
 }
 
 .album-detail .track-list {
@@ -23,6 +26,7 @@
 
 .album-detail .left-side .playlist-add-button {
   font-size: 16px;
+  flex: 1;
 }
 
 .album-detail .left-side .play-album-button {
@@ -35,6 +39,8 @@
   padding-top: 15px;
   padding-bottom: 15px;
   font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .album-detail .left-side .playlist-add-button {
@@ -113,7 +119,7 @@
 
 #album-title {
   font-size: 24px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
 #album-info {
@@ -131,4 +137,8 @@
 
 #album-info a:hover {
   text-decoration: underline;
+}
+
+@media all and (max-width: 700px) {
+  .album-detail .left-side { display: none; }
 }

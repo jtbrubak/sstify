@@ -1,24 +1,71 @@
 .artist-detail {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.artist-detail > span {
+  margin: 20px;
+  font-size: 24px;
+  font-family: 'Montserrat';
 }
 
 .artist-detail .banner {
   width: 100%;
   height: 350px;
-  position: relative;
-}
-
-.banner .artist-logo {
-  width: 100%;
-  height: 100%;
-  opacity: 0.65;
-}
-
-.banner .artist-info {
-  position: absolute;
-  top: 50px;
-  margin: auto;
-  flex: column;
+  display: flex;
+  flex-direction: column;
+  font-size: 60px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  justify-content: center;
   align-items: center;
-  font-size: 48px;
+}
+
+.banner button {
+  width: 130px;
+  border-radius: 50px;
+  font-family: 'VegurRegular';
+  color: white;
+  background-color: #40ad59;
+  border: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.artist-album-list {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.artist-album-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Muli';
+  font-size: 16px;
+}
+
+.artist-album-item span {
+  padding-top: 5px;
+}
+
+.artist-album-item img {
+  height: 200px;
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+.album-artist-link {
+  color: gray;
+}
+
+.album-artist-link a:hover {
+  color: white;
 }

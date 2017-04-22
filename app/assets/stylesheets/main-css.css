@@ -7,20 +7,20 @@
   right: 0;
   overflow: auto;
   background-size: 100%;
+  height: 100%;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
 }
 
 .top-side-elements {
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
+  flex: auto;
   height: 100%;
-  width: 100%
+  width: 100%;
 }
 
 .bottom-side-elements {
+  flex: auto;
   height: 90px;
   width: 100%;
   background-color: #353131;
@@ -31,12 +31,14 @@
 .sidebar {
   height: 100%;
   width: 220px;
+  position: fixed;
   background: linear-gradient(#161616, black);
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  flex: auto;
 }
 
 .playbar {
@@ -45,10 +47,18 @@
 }
 
 .content-box {
-  flex: 1;
-  width: 85%;
+  margin-left: 220px;
+  margin-bottom: 90px;
+  width: 100% - 220px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
   background: linear-gradient(#544848, black);
   color: white;
+  flex: auto;
 }
 
 .sidebar-logo {

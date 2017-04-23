@@ -64,7 +64,7 @@ tracks = [
 "https://s3.amazonaws.com/sstify-dev/seeds/tracks/1986+-+Evol/08+-+marilyn+moore.mp3",
 "https://s3.amazonaws.com/sstify-dev/seeds/tracks/1986+-+Evol/09+-+expressway+to+your+skull.mp3",
 "https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+01+-+my+war.mp3",
-"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+02+-+can%27t+decide.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+02+-+can\'t+decide.mp3",
 "https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+03+-+beat+my+head+against+the+wall.mp3",
 "https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+04+-+i+love+you.mp3",
 "https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+05+-+forever+time.mp3",
@@ -84,10 +84,16 @@ Artist.create(name: 'Sonic Youth', image: "https://s3.amazonaws.com/sstify-dev/s
 Artist.create(name: 'Meat Puppets', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/meat_puppets.jpg")
 
 Album.destroy_all
+Album.create(artist: Artist.find_by_name('Black Flag'), title: 'Damaged', year: 1983, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/damaged.jpg')
 Album.create(artist: Artist.find_by_name('Black Flag'), title: 'My War', year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/my_war.jpg')
-Album.create(artist: Artist.find_by_name('Sonic Youth'), title: "Evol", year: 1986, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/evol.jpg')
-Album.create(artist: Artist.find_by_name('Minutemen'), title: "Double Nickels On The Dime", year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/double_nickels.jpg')
+Album.create(artist: Artist.find_by_name('Black Flag'), title: 'Family Man', year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/family_man.jpg')
+Album.create(artist: Artist.find_by_name('Black Flag'), title: 'Slip It In', year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/slip_it_in.jpg')
+Album.create(artist: Artist.find_by_name('Black Flag'), title: 'Loose Nut', year: 1985, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/loose_nut.jpg')
+Album.create(artist: Artist.find_by_name('Black Flag'), title: 'In My Head', year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/in_my_head.jpg')
+Album.create(artist: Artist.find_by_name('Sonic Youth'), title: "EVOL", year: 1986, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/evol.jpg')
+Album.create(artist: Artist.find_by_name('Minutemen'), title: "Double Nickels on the Dime", year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/double_nickels.jpg')
 Album.create(artist: Artist.find_by_name('Meat Puppets'), title: 'Meat Puppets II', year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/meat_puppets_ii.png')
+
 
 Track.destroy_all
 tracks.each do |track|

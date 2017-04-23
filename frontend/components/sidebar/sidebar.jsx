@@ -20,14 +20,21 @@ class Sidebar extends React.Component {
     }
   }
 
+  checkCurrent(linkPath) {
+    if (this.props.router.location.pathname.includes(linkPath)) { return 'sidebar-selected'; }
+  }
+
   render() {
     return (
       <div className="sidebar">
-        <div className="sidebar-logo">
-          <img src="https://s3.amazonaws.com/sstify-dev/images/logo.png"/><span>SSTify</span>
+        <div className="sidebar-content">
+          <div className="sidebar-logo">
+            <img src="https://s3.amazonaws.com/sstify-dev/images/logo.png"/><span>SSTify</span>
+          </div>
+          <Link to="/browse/artists" className={this.checkCurrent('browse')}>Browse</Link>
+          {this.renderUsername()}
+          <button onClick={this.handleClick}>Log Out</button>
         </div>
-        {this.renderUsername()}
-        <button onClick={this.handleClick}>Log Out</button>
       </div>
     );
   }

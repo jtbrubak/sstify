@@ -21,8 +21,6 @@ class Browse extends React.Component {
               className={this.checkSelected('/browse/artists')}>ARTISTS</Link></li>
             <li><Link to={"/browse/albums"}
               className={this.checkSelected('/browse/albums')}>ALBUMS</Link></li>
-            <li><Link to={"/browse/tracks"}
-              className={this.checkSelected('/browse/tracks')}>TRACKS</Link></li>
           </ul>
           {this.props.children}
         </div>

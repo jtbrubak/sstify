@@ -15,7 +15,7 @@ class ArtistDetail extends React.Component {
     if (artist.image_url) {
       const bannerImage = {
         background: `linear-gradient(rgba(84,72,72,.6), rgba(84,72,72,.6)), url("${artist.image_url}")`,
-        backgroundSize: 'cover'
+        backgroundSize: '100% 100%'
       };
       return (
         <div className="banner" style={bannerImage}>

@@ -11,10 +11,3 @@ export const fetchAllAlbums = () => {
     url: `/api/albums`
   });
 };
-
-export const fetchAllTracks = () => {
-  return $.ajax({
-    method: 'get',
-    url: `/api/tracks`
-  });
-};

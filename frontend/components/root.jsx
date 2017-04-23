@@ -10,7 +10,6 @@ import MainContainer from './main/main_container';
 import BrowseContainer from './browse/browse_container';
 import BrowseArtistsContainer from './browse/browse_artists_container';
 import BrowseAlbumsContainer from './browse/browse_albums_container';
-import BrowseTracksContainer from './browse/browse_tracks_container'
 import AlbumDetailContainer from './album_detail/album_detail_container';
 import ArtistDetailContainer from './artist_detail/artist_detail_container';
 
@@ -26,14 +25,14 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/browse');
+      replace('/browse/artists');
     }
   }
 
   const _redirect = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/browse');
+      replace('/browse/artists');
     } else {
       replace('/login');
     }
@@ -50,7 +49,6 @@ const Root = ({ store }) => {
             <Route path="/browse" component={BrowseContainer}>
               <Route path="/browse/artists" component={BrowseArtistsContainer}/>
               <Route path="/browse/albums" component={BrowseAlbumsContainer}/>
-              <Route path="/browse/tracks" component={BrowseTracksContainer}/>
             </Route>
             <Route path="/album/:id" component={AlbumDetailContainer}/>
             <Route path="/artist/:id" component={ArtistDetailContainer}/>

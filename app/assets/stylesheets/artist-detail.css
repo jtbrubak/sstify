@@ -80,3 +80,12 @@
 .album-artist-link a:hover {
   color: white;
 }
+
+#browse-album-artist-link {
+  margin-top: 5px;
+  color: gray;
+}
+
+#browse-album-artist-link a:hover {
+  color: white;
+}

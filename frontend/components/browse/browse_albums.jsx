@@ -19,6 +19,7 @@ class BrowseAlbums extends React.Component {
             <li className="browse-album-item" key={album.id}>
               <Link to={`/album/${album.id}`}><img src={album.image_url}/></Link><br/>
               <span><Link to={`/album/${album.id}`}>{album.title}</Link></span>
+              <span id="browse-album-artist-link">By <Link to={`artist/${album.artist.id}`}>{album.artist.name}</Link></span>
             </li>
           ))
         }

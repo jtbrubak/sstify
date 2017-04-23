@@ -9,4 +9,9 @@ class Api::ArtistsController < ApplicationController
     end
   end
 
+  def index
+    @artists = Artist.all.order('name')
+    render 'api/artists/index'
+  end
+
 end

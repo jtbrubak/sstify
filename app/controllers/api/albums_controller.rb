@@ -9,4 +9,9 @@ class Api::AlbumsController < ApplicationController
     end
   end
 
+  def index
+    @albums = Album.all.order('title')
+    render 'api/albums/index'
+  end
+
 end

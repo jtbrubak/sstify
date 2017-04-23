@@ -1,0 +1,83 @@
+.browse-header {
+  margin-top: 20px;
+  width: 100%;
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.browse-nav {
+  color: gray;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+}
+
+.browse-nav li:hover {
+  color: white;
+}
+
+.selected-browse-nav {
+  color: white;
+  border-bottom: 1px solid #1aff66;
+}
+
+.browse-artists {
+  margin-top: 40px;
+  font-family: 'Muli';
+  font-size: 16px;
+  width: 100%;
+}
+
+.browse-artists ul {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: wrap;
+}
+
+.browse-artist-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.browse-artist-item img {
+  height: 200px;
+  width: 200px;
+}
+
+.browse-albums {
+  margin-top: 40px;
+  font-family: 'Muli';
+  font-size: 16px;
+  width: 100%;
+}
+
+.browse-albums ul {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: wrap;
+}
+
+.browse-album-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.browse-album-item img {
+  height: 200px;
+  width: 200px;
+}

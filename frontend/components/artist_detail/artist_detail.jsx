@@ -33,7 +33,7 @@ class ArtistDetail extends React.Component {
           <ul>
             {artist.albums.map((album) =>
               <li className="artist-album-item" key={album.id}>
-                <img src={album.image_url}/>
+                <Link to={`/album/${album.id}`}><img src={album.image_url}/></Link>
                 <span><Link to={`/album/${album.id}`}>{album.title}</Link></span>
                 <span className="album-artist-link">By <Link to={`/artist/${album.artist.id}`}>{album.artist.name}</Link></span>
               </li>

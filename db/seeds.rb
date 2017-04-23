@@ -41,7 +41,37 @@ tracks = [
 'https://s3.amazonaws.com/sstify-dev/seeds/tracks/1984+-+Double+Nickels+On+The+Dime/40+-+dr.+wu.mp3',
 'https://s3.amazonaws.com/sstify-dev/seeds/tracks/1984+-+Double+Nickels+On+The+Dime/41+-+the+world+according+to+nouns.mp3',
 'https://s3.amazonaws.com/sstify-dev/seeds/tracks/1984+-+Double+Nickels+On+The+Dime/42+-+love+dance.mp3',
-'https://s3.amazonaws.com/sstify-dev/seeds/tracks/1984+-+Double+Nickels+On+The+Dime/43+-+three+car+jam.mp3'
+'https://s3.amazonaws.com/sstify-dev/seeds/tracks/1984+-+Double+Nickels+On+The+Dime/43+-+three+car+jam.mp3',
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1983+-+Meat+Puppets+II/01+-+split+myself+in+two.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1983+-+Meat+Puppets+II/02+-+magic+toy+missing.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1983+-+Meat+Puppets+II/03+-+lost.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1983+-+Meat+Puppets+II/04+-+plateau.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1983+-+Meat+Puppets+II/05+-+aurora+borealis.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1983+-+Meat+Puppets+II/06+-+we\'re+here.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1983+-+Meat+Puppets+II/07+-+climbing.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1983+-+Meat+Puppets+II/08+-+new+gods.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1983+-+Meat+Puppets+II/09+-+oh\,+me.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1983+-+Meat+Puppets+II/10+-+lake+of+fire.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1983+-+Meat+Puppets+II/11+-+i\'m+a+mindless+idiot.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1983+-+Meat+Puppets+II/12+-+the+whistling+song.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1986+-+Evol/01+-+tom+violence.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1986+-+Evol/02+-+shadow+of+a+doubt.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1986+-+Evol/03+-+star+power.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1986+-+Evol/04+-+in+the+kingdom+\#19.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1986+-+Evol/05+-+green+light.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1986+-+Evol/06+-+death+to+our+friends.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1986+-+Evol/07+-+secret+girl.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1986+-+Evol/08+-+marilyn+moore.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/1986+-+Evol/09+-+expressway+to+your+skull.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+01+-+my+war.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+02+-+can%27t+decide.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+03+-+beat+my+head+against+the+wall.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+04+-+i+love+you.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+05+-+forever+time.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+06+-+the+swinging+man.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+07+-+nothing+left+inside.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+08+-+three+nights.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+09+-+scream.mp3"
 ]
 
 User.destroy_all
@@ -51,7 +81,7 @@ Artist.destroy_all
 Artist.create(name: 'Black Flag', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/black_flag.jpg")
 Artist.create(name: 'Minutemen', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/minutemen.jpg")
 Artist.create(name: 'Sonic Youth', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/sonic_youth.jpg")
-Artist.create(name: 'Meat Puppets', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/")
+Artist.create(name: 'Meat Puppets', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/meat_puppets.jpg")
 
 Album.destroy_all
 Album.create(artist: Artist.find_by_name('Black Flag'), title: 'My War', year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/my_war.jpg')

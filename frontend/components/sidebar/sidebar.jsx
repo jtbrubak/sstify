@@ -6,9 +6,11 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = { showForm: false, title: "" }
+    this.handleUpdate = this.handleUpdate.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.renderUsername = this.renderUsername.bind(this);
     this.togglePlaylistForm = this.togglePlaylistForm.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleClick(e) {
@@ -16,7 +18,8 @@ class Sidebar extends React.Component {
     this.props.logout().then(() => this.props.router.replace('/'));
   }
 
-  togglePlaylistForm() {
+  togglePlaylistForm(e) {
+    e.preventDefault();
     const newState = this.state.showForm ? false : true;
     this.setState({ showForm: newState, title: "" });
     this.forceUpdate();
@@ -26,6 +29,16 @@ class Sidebar extends React.Component {
     if (this.props.currentUser) {
       return this.props.currentUser.username;
     }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const data = { playlist: { user_id: this.props.currentUser.id, title: this.state.title } }
+      this.props.createPlaylist(data).then((playlist) => {
+        debugger
+        this.props.router.replace(`/playlist/${playlist.id}`);
+      }
+    );
   }
 
   checkCurrent(linkPath) {
@@ -67,8 +80,8 @@ class Sidebar extends React.Component {
               onChange={this.handleUpdate}
               className="playlist-title-input"/>
             <div className="button-row">
-              <button>CANCEL</button>
-              <button>CREATE</button>
+              <button onClick={this.togglePlaylistForm}>CANCEL</button>
+              <button onClick={this.handleSubmit}>CREATE</button>
             </div>
           </form>
           <div className="create-playlist" onClick={this.togglePlaylistForm}>

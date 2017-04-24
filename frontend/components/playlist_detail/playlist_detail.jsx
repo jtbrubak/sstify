@@ -1,39 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class AlbumDetail extends React.Component {
+class PlaylistDetail extends React.Component {
 
   constructor(props) {
     super(props);
   }
 
   componentWillMount() {
-    this.props.fetchAlbumDetail(this.props.id);
+    this.props.fetchPlaylistDetail(this.props.id);
   }
 
-  renderInfo(album) {
-    if (album.image_url) {
+  renderInfo(playlist) {
+    debugger
+    const image_url = "http://greenlea.ru/Articles-Directory/Online-Dating-the-First-Step-Is-Your-Profile/i0099rp.jpg"
+    if (playlist.tracks) {
       return (
         <div className="left-side">
-          <img src={album.image_url}/><br/>
-          <span id="album-title">{album.title}<br/></span>
-          <span id="album-info">
-            By <Link to={`/artist/${album.artist.id}`}>{album.artist.name}</Link><br/>
+          <img src={image_url}/><br/>
+          <span id="playlist-title">{playlist.title}<br/></span>
+          <span id="playlist-info">
+            By {playlist.user}<br/>
           </span>
-          <span id="album-info">{album.tracks.length} SONGS</span>
-          <button className="play-album-button">P L A Y</button>
+          <span id="playlist-info">{playlist.tracks.length} SONGS</span>
+          <button className="play-playlist-button">P L A Y</button>
           <button className="playlist-add-button">. . .</button>
         </div>
       );
     }
   }
 
-  renderTracks(album) {
-    if (album.tracks) {
+  renderTracks(playlist) {
+    if (playlist.tracks) {
       return (
         <div className="track-list">
           <ol>
-            {album.tracks.map((track, i) =>
+            {playlist.tracks.map((track, i) =>
               <li key={i+1}>
                 <div className="track-list-left-side">
                   <button className='play-pause-button'>
@@ -60,12 +62,12 @@ class AlbumDetail extends React.Component {
   }
 
   render() {
-    const album = this.props.albumDetail;
+    const playlist = this.props.playlistDetail;
     return (
       <div className="content-box">
         <div className="playlist-detail">
-          {this.renderInfo(album)}
-          {this.renderTracks(album)}
+          {this.renderInfo(playlist)}
+          {this.renderTracks(playlist)}
         </div>
       </div>
     );
@@ -73,4 +75,4 @@ class AlbumDetail extends React.Component {
 
 }
 
-export default AlbumDetail;
+export default PlaylistDetail;

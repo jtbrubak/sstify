@@ -5,13 +5,21 @@ class Sidebar extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = { showForm: false, title: "" }
     this.handleClick = this.handleClick.bind(this);
     this.renderUsername = this.renderUsername.bind(this);
+    this.togglePlaylistForm = this.togglePlaylistForm.bind(this);
   }
 
   handleClick(e) {
     e.preventDefault();
     this.props.logout().then(() => this.props.router.replace('/'));
+  }
+
+  togglePlaylistForm() {
+    const newState = this.state.showForm ? false : true;
+    this.setState({ showForm: newState, title: "" });
+    this.forceUpdate();
   }
 
   renderUsername() {
@@ -21,19 +29,54 @@ class Sidebar extends React.Component {
   }
 
   checkCurrent(linkPath) {
-    if (this.props.router.location.pathname.includes(linkPath)) { return 'sidebar-selected'; }
+    if (this.props.path.includes(linkPath)) { return 'sidebar-selected'; }
+  }
+
+  showForm() {
+    return this.state.showForm ? 'playlist-form-show' : 'playlist-form';
+  }
+
+  handleUpdate(e) {
+    this.setState({ title: e.currentTarget.value })
   }
 
   render() {
     return (
       <div className="sidebar">
-        <div className="sidebar-content">
-          <div className="sidebar-logo">
-            <img src="https://s3.amazonaws.com/sstify-dev/images/logo.png"/><span>SSTify</span>
+        <div className="sidebar-top">
+          <div className="sidebar-content">
+            <div className="sidebar-logo">
+              <img src="https://s3.amazonaws.com/sstify-dev/images/logo.png"/><span>SSTify</span>
+            </div>
+            <div className="sidebar-search">
+              <Link to={'/search'}><span>Search</span>
+              <i className="material-icons">search</i></Link>
+            </div>
+            <div className="browse-link">
+              <Link to="/browse/artists" className={this.checkCurrent('browse')}><span>Browse</span></Link>
+            </div>
           </div>
-          <Link to="/browse/artists" className={this.checkCurrent('browse')}>Browse</Link>
-          {this.renderUsername()}
-          <button onClick={this.handleClick}>Log Out</button>
+        </div>
+
+        <div className="sidebar-bottom">
+          <form id="playlist-form" className={this.showForm()}>
+            <span>CREATE NEW PLAYLIST</span>
+            <input type="text"
+              value={this.state.title}
+              placeholder="Playlist title"
+              onChange={this.handleUpdate}
+              className="playlist-title-input"/>
+            <div className="button-row">
+              <button>CANCEL</button>
+              <button>CREATE</button>
+            </div>
+          </form>
+          <div className="create-playlist" onClick={this.togglePlaylistForm}>
+            <i className="material-icons">control_point</i>
+            <span>Add Playlist</span>
+          </div>
+          <span>{this.renderUsername()}</span>
+          <button className="log-out-button" onClick={this.handleClick}>Log Out</button>
         </div>
       </div>
     );

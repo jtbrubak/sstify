@@ -8,6 +8,10 @@ class Main extends React.Component {
     super(props);
   }
 
+  componentWillReceiveProps() {
+    this.render();
+  }
+
   render() {
     return (
       <div className="main-container">

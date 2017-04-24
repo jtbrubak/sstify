@@ -2,8 +2,9 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Sidebar from './sidebar';
 
-const mapStateToProps = (state) => ({
-  currentUser: state.session.currentUser
+const mapStateToProps = (state, ownProps) => ({
+  currentUser: state.session.currentUser,
+  path: ownProps.router.location.pathname
 });
 
 const mapDispatchToProps = (dispatch) => ({

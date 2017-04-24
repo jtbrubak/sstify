@@ -14,7 +14,12 @@
   letter-spacing: 1px;
   display: flex;
   width: 10%;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.browse-nav li {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .browse-nav li:hover {
@@ -52,6 +57,7 @@
 .browse-artist-item img {
   height: 200px;
   width: 200px;
+  border-radius: 50%;
 }
 
 .browse-albums {

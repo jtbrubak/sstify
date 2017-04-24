@@ -195,6 +195,33 @@
   border-bottom: 1px solid gray;
 }
 
+.button-row {
+  width: 90%;
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-row > button:first-child {
+  color: #1aff66;
+  width: 45%;
+  border: 1px solid #1aff66;
+  background: transparent;
+  font-size: 16px;
+  border-radius: 50px;
+  font-family: 'Montserrat';
+}
+
+.button-row > button:last-child {
+  color: black;
+  width: 45%;
+  border: 1px solid #1aff66;
+  background: #1aff66;
+  font-size: 16px;
+  border-radius: 50px;
+  font-family: 'Montserrat';
+}
+
 .playlist-form {
   display: none;
 }
@@ -209,7 +236,7 @@
   left: 220px;
   position: fixed;
   height: 150px;
-  width: 375px;
+  width: 250px;
   background-color: black;
 }
 

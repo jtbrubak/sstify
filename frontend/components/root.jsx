@@ -12,6 +12,7 @@ import BrowseArtistsContainer from './browse/browse_artists_container';
 import BrowseAlbumsContainer from './browse/browse_albums_container';
 import AlbumDetailContainer from './album_detail/album_detail_container';
 import ArtistDetailContainer from './artist_detail/artist_detail_container';
+import PlaylistDetailContainer from './playlist_detail/playlist_detail_container'
 
 const Root = ({ store }) => {
 
@@ -52,6 +53,7 @@ const Root = ({ store }) => {
             </Route>
             <Route path="/album/:id" component={AlbumDetailContainer}/>
             <Route path="/artist/:id" component={ArtistDetailContainer}/>
+            <Route path="/playlist/:id" component={PlaylistDetailContainer}/>
           </Route>
         </Route>
       </Router>

@@ -18,8 +18,7 @@ class Sidebar extends React.Component {
     this.props.logout().then(() => this.props.router.replace('/'));
   }
 
-  togglePlaylistForm(e) {
-    e.preventDefault();
+  togglePlaylistForm() {
     const newState = this.state.showForm ? false : true;
     this.setState({ showForm: newState, title: "" });
     this.forceUpdate();
@@ -35,7 +34,7 @@ class Sidebar extends React.Component {
     e.preventDefault();
     const data = { playlist: { user_id: this.props.currentUser.id, title: this.state.title } }
       this.props.createPlaylist(data).then((playlist) => {
-        debugger
+        this.togglePlaylistForm();
         this.props.router.replace(`/playlist/${playlist.id}`);
       }
     );

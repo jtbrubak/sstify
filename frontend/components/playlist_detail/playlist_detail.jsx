@@ -12,7 +12,6 @@ class PlaylistDetail extends React.Component {
   }
 
   renderInfo(playlist) {
-    debugger
     const image_url = "http://greenlea.ru/Articles-Directory/Online-Dating-the-First-Step-Is-Your-Profile/i0099rp.jpg"
     if (playlist.tracks) {
       return (

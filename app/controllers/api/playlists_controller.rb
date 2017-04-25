@@ -18,6 +18,15 @@ class Api::PlaylistsController < ApplicationController
     end
   end
 
+  def destroy
+    @playlist = Playlist.find(params[:id])
+    if @playlist.destroy
+      render 'api/playlists/show'
+    else
+      render json: ['Not found'], status: 404
+    end
+  end
+
   private
   def playlist_params
     params.require(:playlist).permit(:user_id, :title)

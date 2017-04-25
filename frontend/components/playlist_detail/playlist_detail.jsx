@@ -5,6 +5,7 @@ class PlaylistDetail extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentWillMount() {
@@ -17,6 +18,25 @@ class PlaylistDetail extends React.Component {
     }
   }
 
+  handleDelete() {
+    this.props.deletePlaylist(this.props.id).then(() => {
+      this.props.router.replace('/browse/artists');
+      location.reload(true);
+    });
+  }
+
+  renderButton() {
+    if (this.props.playlistDetail.user.id === this.props.currentUser.id) {
+      return (
+        <button className="play-playlist-button" onClick={this.handleDelete}>DELETE</button>
+      );
+    } else {
+      return (
+        <button className="play-playlist-button">FOLLOW</button>
+      );
+    }
+  }
+
   renderInfo(playlist) {
     const image_url = "http://greenlea.ru/Articles-Directory/Online-Dating-the-First-Step-Is-Your-Profile/i0099rp.jpg";
     if (playlist.tracks) {
@@ -25,11 +45,11 @@ class PlaylistDetail extends React.Component {
           <img src={image_url}/><br/>
           <span id="playlist-title">{playlist.title}<br/></span>
           <span id="playlist-info">
-            By {playlist.user}<br/>
+            By {playlist.user.username}<br/>
           </span>
           <span id="playlist-info">{playlist.tracks.length} SONGS</span>
           <button className="play-playlist-button">PLAY</button>
-          <button className="play-playlist-button">FOLLOW</button>
+          {this.renderButton()}
         </div>
       );
     }

@@ -1,0 +1,167 @@
+.playlist-detail {
+  display: flex;
+  align-items: space-between;
+}
+
+.playlist-detail .left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 30%;
+  height: 100%;
+  flex: 1;
+}
+
+.playlist-detail .track-list {
+  width: 70%;
+}
+
+.playlist-detail .left-side img {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  size: 100%;
+  align-self: center;
+}
+
+.playlist-detail .left-side .playlist-add-button {
+  font-size: 16px;
+  flex: 1;
+}
+
+.playlist-detail .left-side .play-playlist-button {
+  width: 25%;
+  border-radius: 50px;
+  font-family: 'VegurRegular';
+  color: white;
+  background-color: #40ad59;
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+}
+
+.playlist-detail .left-side .playlist-add-button {
+  background: none;
+  color: #d7dbe2;
+  border: none;
+}
+
+.playlist-detail .track-list {
+  margin-top: 50px;
+}
+
+.playlist-detail .track-list ol {
+  font-family: 'Muli';
+  color: #d7dbe2;
+  font-size: 20px;
+}
+
+.playlist-detail .track-list li {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  margin-right: 20px;
+  counter-increment: count-me;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.playlist-detail .track-list li:hover {
+  cursor: default;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.track-list-right-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+.track-list-right-side .playlist-add-button {
+  margin-right: 70px;
+  bottom: 5px;
+  display: none;
+  position: relative;
+}
+
+.track-list li:hover .playlist-add-button {
+  display: inline;
+}
+
+.before-track-name {
+  width: 30px;
+  justify-content: flex-end;
+  align-items: flex
+}
+
+.play-pause-button {
+  background: none;
+  border: none;
+  padding-right: 10px;
+  color: gray;
+  font-size: 18px;
+  bottom: 1px;
+  right: 5px;
+  position: relative;
+}
+
+.track-list li:hover .track-num {
+  display: none;
+}
+
+.track-list li:hover .play-button:before {
+  content: '►';
+}
+
+.playlist-detail .track-list li:hover .play-pause-button {
+  content: '►';
+}
+
+#playlist-title {
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+
+#playlist-info {
+  font-size: 16px;
+  color: gray;
+  font-family: 'VegurRegular';
+  font-weight: lighter;
+  padding-bottom: 10px;
+}
+
+#playlist-info a {
+  text-decoration: none;
+  color: gray;
+}
+
+#playlist-info a:hover {
+  text-decoration: underline;
+}
+
+@media all and (max-width: 700px) {
+  .playlist-detail .left-side { display: none; }
+}
+
+.second-line {
+  margin-left: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.second-line span {
+  padding-right: 10px;
+  color: gray;
+  font-size: 16px;
+}
+
+.second-line a span:hover {
+  color: white;
+}

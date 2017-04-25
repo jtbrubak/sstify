@@ -11,8 +11,14 @@ class PlaylistDetail extends React.Component {
     this.props.fetchPlaylistDetail(this.props.id);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.id !== nextProps.id) {
+      this.props.fetchPlaylistDetail(nextProps.id);
+    }
+  }
+
   renderInfo(playlist) {
-    const image_url = "http://greenlea.ru/Articles-Directory/Online-Dating-the-First-Step-Is-Your-Profile/i0099rp.jpg"
+    const image_url = "http://greenlea.ru/Articles-Directory/Online-Dating-the-First-Step-Is-Your-Profile/i0099rp.jpg";
     if (playlist.tracks) {
       return (
         <div className="left-side">
@@ -22,8 +28,8 @@ class PlaylistDetail extends React.Component {
             By {playlist.user}<br/>
           </span>
           <span id="playlist-info">{playlist.tracks.length} SONGS</span>
-          <button className="play-playlist-button">P L A Y</button>
-          <button className="playlist-add-button">. . .</button>
+          <button className="play-playlist-button">PLAY</button>
+          <button className="play-playlist-button">FOLLOW</button>
         </div>
       );
     }
@@ -36,15 +42,25 @@ class PlaylistDetail extends React.Component {
           <ol>
             {playlist.tracks.map((track, i) =>
               <li key={i+1}>
-                <div className="track-list-left-side">
+                <div>
+                <div className='before-track-name'>
                   <button className='play-pause-button'>
                     <span className='track-num'>{i+1}.</span>
                     <span className='play-button'></span>
                   </button>
-                  <span id="track-title">{track.title}</span>
+                </div>
+                <div className="track-list-left-side">
+                  <div className="first-line">
+                    <span id="track-title">{track.title}</span>
+                  </div>
+                  <div className="second-line">
+                    <Link to={`/artist/${track.artist.id}`}><span>{track.artist.name}</span></Link>
+                    <span>·</span>
+                    <Link to={`album/${track.album.id}`}><span>{track.album.title}</span></Link>
+                  </div>
+                </div>
                 </div>
                 <div className="track-list-right-side">
-                  <button className="playlist-add-button">. . .</button>
                   <span id="track-length">{this.renderLength(track)}</span>
                 </div>
               </li>)

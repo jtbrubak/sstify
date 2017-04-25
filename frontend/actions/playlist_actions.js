@@ -14,6 +14,10 @@ export const createPlaylist = playlist => dispatch => (
 	}).fail(err => console.log(err.responseJSON))
 );
 
+export const addTracksToPlaylist = data => dispatch => (
+  APIUtil.addTracksToPlaylist(data).fail(err => console.log(err.responseJSON))
+);
+
 export const receivePlaylistDetail = playlist => ({
   type: RECEIVE_PLAYLIST_DETAIL,
   playlist

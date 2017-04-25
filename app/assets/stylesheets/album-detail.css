@@ -24,11 +24,6 @@
   align-self: center;
 }
 
-.album-detail .left-side .playlist-add-button {
-  font-size: 16px;
-  flex: 1;
-}
-
 .album-detail .left-side .play-album-button {
   width: 25%;
   border-radius: 50px;
@@ -41,12 +36,15 @@
   font-size: 14px;
   margin-top: 10px;
   margin-bottom: 10px;
+  letter-spacing: 3px;
 }
 
 .album-detail .left-side .playlist-add-button {
   background: none;
   color: #d7dbe2;
   border: none;
+  font-size: 16px;
+  flex: 1;
 }
 
 .album-detail .track-list {
@@ -83,14 +81,18 @@
   justify-content: space-between;
 }
 
-.track-list-right-side .playlist-add-button {
+.track-list-right-side .track-playlist-add-button {
   margin-right: 70px;
   bottom: 5px;
   display: none;
   position: relative;
+  background: none;
+  color: #d7dbe2;
+  border: none;
+  font-size: 16px;
 }
 
-.track-list li:hover .playlist-add-button {
+.track-list li:hover .track-playlist-add-button {
   display: inline;
 }
 
@@ -141,4 +143,141 @@
 
 @media all and (max-width: 700px) {
   .album-detail .left-side { display: none; }
+}
+
+.album-playlist-add {
+  display: none;
+}
+
+.album-playlist-add-show {
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  color: gray;
+  height: 150px;
+  width: 250px;
+  background-color: #353131;
+  margin-bottom: 10px;
+}
+
+.album-playlist-add-show div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 12px;
+  overflow: auto;
+}
+
+.album-playlist-add-show span {
+  padding: 5px;
+}
+
+.album-playlist-add-show ul {
+  align-self: center;
+  flex: column;
+  align-items: center;
+  width: 90%;
+}
+
+.album-playlist-add-show li {
+  align-self: center;
+  padding: 5px;
+  width: 95%;
+  cursor: pointer;
+}
+
+.album-playlist-add-show li:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.track-playlist-add {
+  position: fixed;
+  display: flex;
+  right: 210px;
+  border-radius: 3px;
+  color: gray;
+  height: 150px;
+  width: 250px;
+  background-color: #353131;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Montserrat';
+  font-size: 12px;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.track-playlist-add span {
+  padding: 5px;
+}
+
+.track-list .track-playlist-add ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 90%;
+  width: 90%;
+}
+
+
+.track-list .track-playlist-add ul li {
+  width: 90%;
+  padding: 5px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.track-list .track-playlist-add ul li:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/*scrollbar*/
+.track-playlist-add::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.track-playlist-add::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+.track-playlist-add::-webkit-scrollbar-thumb {
+  background: #404040;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+.track-playlist-add::-webkit-scrollbar-track {
+  background: #000000;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+.track-playlist-add::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.album-playlist-add-show div::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.album-playlist-add-show div::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+.album-playlist-add-show div::-webkit-scrollbar-thumb {
+  background: #404040;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+.album-playlist-add-show div::-webkit-scrollbar-track {
+  background: #000000;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+.album-playlist-add-show div::-webkit-scrollbar-corner {
+  background: transparent;
 }

@@ -63,7 +63,7 @@ class AlbumDetail extends React.Component {
     const album = this.props.albumDetail;
     return (
       <div className="content-box">
-        <div className="playlist-detail">
+        <div className="album-detail">
           {this.renderInfo(album)}
           {this.renderTracks(album)}
         </div>

@@ -14,6 +14,10 @@ export const createPlaylist = playlist => dispatch => (
 	}).fail(err => console.log(err.responseJSON))
 );
 
+export const deletePlaylist = id => dispatch => (
+  APIUtil.deletePlaylist(id)
+);
+
 export const addTracksToPlaylist = data => dispatch => (
   APIUtil.addTracksToPlaylist(data).fail(err => console.log(err.responseJSON))
 );

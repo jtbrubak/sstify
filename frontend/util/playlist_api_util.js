@@ -20,3 +20,10 @@ export const addTracksToPlaylist = (data) => {
     data
   });
 };
+
+export const deletePlaylist = (id) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/playlists/${id}`
+  });
+};

@@ -33,7 +33,7 @@ class AlbumDetail extends React.Component {
 
   renderDropdown(tracks) {
     return (
-      <div className="album-playlist-add-show-display">
+      <div>
         <span>Add to Playlist</span>
         <ul>
           {

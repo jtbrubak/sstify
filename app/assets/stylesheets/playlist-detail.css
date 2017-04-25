@@ -96,18 +96,18 @@
 }
 
 .before-track-name {
-  width: 30px;
+  display: flex;
   justify-content: flex-end;
   align-items: flex
 }
 
-.play-pause-button {
+.playlist-detail .play-pause-button {
   background: none;
   border: none;
   padding-right: 10px;
   color: gray;
   font-size: 18px;
-  bottom: 1px;
+  bottom: 10px;
   right: 5px;
   position: relative;
 }
@@ -151,7 +151,6 @@
 }
 
 .second-line {
-  margin-left: 30px;
   display: flex;
   justify-content: flex-start;
 }
@@ -164,4 +163,8 @@
 
 .second-line a span:hover {
   color: white;
+}
+
+.playlist-track-display {
+  display: flex;
 }

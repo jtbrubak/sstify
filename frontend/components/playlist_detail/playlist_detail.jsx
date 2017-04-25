@@ -42,23 +42,23 @@ class PlaylistDetail extends React.Component {
           <ol>
             {playlist.tracks.map((track, i) =>
               <li key={i+1}>
-                <div>
-                <div className='before-track-name'>
-                  <button className='play-pause-button'>
-                    <span className='track-num'>{i+1}.</span>
-                    <span className='play-button'></span>
-                  </button>
-                </div>
-                <div className="track-list-left-side">
-                  <div className="first-line">
-                    <span id="track-title">{track.title}</span>
+                <div className="playlist-track-display">
+                  <div className='before-track-name'>
+                    <button className='play-pause-button'>
+                      <span className='track-num'>{i+1}.</span>
+                      <span className='play-button'></span>
+                    </button>
                   </div>
-                  <div className="second-line">
-                    <Link to={`/artist/${track.artist.id}`}><span>{track.artist.name}</span></Link>
-                    <span>·</span>
-                    <Link to={`album/${track.album.id}`}><span>{track.album.title}</span></Link>
+                  <div className="track-list-left-side">
+                    <div className="first-line">
+                      <span id="track-title">{track.title}</span>
+                    </div>
+                    <div className="second-line">
+                      <Link to={`/artist/${track.artist.id}`}><span>{track.artist.name}</span></Link>
+                      <span>·</span>
+                      <Link to={`album/${track.album.id}`}><span>{track.album.title}</span></Link>
+                    </div>
                   </div>
-                </div>
                 </div>
                 <div className="track-list-right-side">
                   <span id="track-length">{this.renderLength(track)}</span>

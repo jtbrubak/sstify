@@ -96,13 +96,12 @@
   display: inline;
 }
 
-.play-pause-button {
+.album-detail .play-pause-button {
   background: none;
   border: none;
   padding-right: 10px;
   color: gray;
   font-size: 18px;
-  bottom: 1px;
   right: 5px;
   position: relative;
 }
@@ -235,6 +234,11 @@
 .track-list .track-playlist-add ul li:hover {
   background-color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
+}
+
+.album-detail .track-list-left-side {
+  display: flex;
+  align-items: center;
 }
 
 /*scrollbar*/

@@ -5,7 +5,7 @@ class Sidebar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { showForm: false, title: "" }
+    this.state = { showForm: false, title: "" };
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.renderUsername = this.renderUsername.bind(this);
@@ -32,7 +32,7 @@ class Sidebar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const data = { playlist: { user_id: this.props.currentUser.id, title: this.state.title } }
+    const data = { playlist: { user_id: this.props.currentUser.id, title: this.state.title } };
       this.props.createPlaylist(data).then((playlist) => {
         this.togglePlaylistForm();
         this.props.router.replace(`/playlist/${playlist.id}`);
@@ -49,7 +49,21 @@ class Sidebar extends React.Component {
   }
 
   handleUpdate(e) {
-    this.setState({ title: e.currentTarget.value })
+    this.setState({ title: e.currentTarget.value });
+  }
+
+  renderPlaylists() {
+    if (this.props.currentUser.playlists) {
+      return (
+        <ul>
+          {
+            this.props.currentUser.playlists.map((playlist) => (
+              <Link to={`/playlist/${playlist.id}`}><li>{playlist.title}</li></Link>
+            ))
+          }
+        </ul>
+      );
+    }
   }
 
   render() {
@@ -68,7 +82,12 @@ class Sidebar extends React.Component {
               <Link to="/browse/artists" className={this.checkCurrent('browse')}><span>Browse</span></Link>
             </div>
           </div>
+          <div className="sidebar-middle">
+            <span id="playlist-header">Playlists</span>
+            {this.renderPlaylists()}
+          </div>
         </div>
+
 
         <div className="sidebar-bottom">
           <form id="playlist-form" className={this.showForm()}>

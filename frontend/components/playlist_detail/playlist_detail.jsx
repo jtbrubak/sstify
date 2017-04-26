@@ -29,14 +29,16 @@ class PlaylistDetail extends React.Component {
   }
 
   renderButton() {
-    if (this.props.playlistDetail.user.id === this.props.currentUser.id) {
-      return (
-        <button className="play-playlist-button" onClick={this.handleDelete}>DELETE</button>
-      );
-    } else {
-      return (
-        <button className="play-playlist-button" onClick={this.toggleFollow}>{this.followStatus()}</button>
-      );
+    if (this.props.currentUser) {
+      if (this.props.playlistDetail.user.id === this.props.currentUser.id) {
+        return (
+          <button className="play-playlist-button" onClick={this.handleDelete}>DELETE</button>
+        );
+      } else {
+        return (
+          <button className="play-playlist-button" onClick={this.toggleFollow}>{this.followStatus()}</button>
+        );
+      }
     }
   }
 

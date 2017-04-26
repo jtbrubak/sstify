@@ -162,8 +162,8 @@
 .album-playlist-add-show div {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;

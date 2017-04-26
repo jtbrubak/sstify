@@ -162,7 +162,8 @@
 .album-playlist-add-show div {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
   width: 100%;
@@ -176,7 +177,8 @@
 
 .album-playlist-add-show ul {
   align-self: center;
-  flex: column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   width: 90%;
 }
@@ -196,6 +198,7 @@
   position: fixed;
   display: flex;
   right: 210px;
+  bottom: 400px;
   border-radius: 3px;
   color: gray;
   height: 150px;
@@ -217,7 +220,7 @@
 .track-list .track-playlist-add ul {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   height: 90%;
   width: 90%;

@@ -13,6 +13,10 @@ import BrowseAlbumsContainer from './browse/browse_albums_container';
 import AlbumDetailContainer from './album_detail/album_detail_container';
 import ArtistDetailContainer from './artist_detail/artist_detail_container';
 import PlaylistDetailContainer from './playlist_detail/playlist_detail_container'
+import UserDetailContainer from './user_detail/user_detail_container';
+import UserDetailFollowedPlaylistsContainer from './user_detail/user_detail_followed_playlists_container';
+import UserDetailFollowedUsersContainer from './user_detail/user_detail_followed_users_container';
+import UserDetailPlaylistsContainer from './user_detail/user_detail_playlists_container';
 
 const Root = ({ store }) => {
 
@@ -54,6 +58,11 @@ const Root = ({ store }) => {
             <Route path="/album/:id" component={AlbumDetailContainer}/>
             <Route path="/artist/:id" component={ArtistDetailContainer}/>
             <Route path="/playlist/:id" component={PlaylistDetailContainer}/>
+            <Route path="/user/:id" component={UserDetailContainer}>
+              <Route path="/user/followed_playlists/:id" component={UserDetailFollowedPlaylistsContainer}/>
+              <Route path="/user/followed_users/:id" component={UserDetailFollowedUsersContainer}/>
+              <Route path="/user/playlists/:id" component={UserDetailPlaylistsContainer}/>
+            </Route>
           </Route>
         </Route>
       </Router>

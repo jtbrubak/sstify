@@ -5,6 +5,8 @@ Rails.application.routes.draw do
    resources :users, only: [:create, :show]
    resources :playlists, only: [:show, :create, :destroy]
    resources :playlist_tracks, only: [:create, :destroy]
+   resources :playlist_follows, only: [:create, :destroy]
+   resources :user_follows, only: [:create, :destroy]
    resource :session, only: [:create, :destroy, :show]
   end
   root "static_pages#root"

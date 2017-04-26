@@ -7,6 +7,8 @@ class PlaylistDetail extends React.Component {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
+    this.followStatus = this.followStatus.bind(this);
+    this.toggleFollow = this.toggleFollow.bind(this);
   }
 
   componentWillMount() {
@@ -33,8 +35,28 @@ class PlaylistDetail extends React.Component {
       );
     } else {
       return (
-        <button className="play-playlist-button">FOLLOW</button>
+        <button className="play-playlist-button" onClick={this.toggleFollow}>{this.followStatus()}</button>
       );
+    }
+  }
+
+  toggleFollow() {
+    if (this.followStatus() === "FOLLOW") {
+      this.props.createPlaylistFollow({ playlist_follow: { user_id: this.props.currentUser.id, playlist_id: this.props.playlistDetail.id } });
+    } else {
+      this.props.deletePlaylistFollow({ playlist_follow: { user_id: this.props.currentUser.id, playlist_id: this.props.playlistDetail.id } });
+    }
+  }
+
+  followStatus() {
+    if (this.props.currentUserDetail) {
+      let status = "FOLLOW";
+      this.props.currentUserDetail.followed_playlists.forEach((playlist) => {
+        if ( playlist.id === this.props.playlistDetail.id) {
+          status = "UNFOLLOW";
+        }
+      });
+      return status;
     }
   }
 

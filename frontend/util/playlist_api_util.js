@@ -27,3 +27,10 @@ export const deletePlaylist = (id) => {
     url: `/api/playlists/${id}`
   });
 };
+
+export const removeTrack = (id) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/playlist_tracks/${id}`
+  });
+};

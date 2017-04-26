@@ -79,9 +79,21 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-.track-list-right-side {
+.playlist-detail .track-list-right-side {
   display: flex;
   justify-content: space-between;
+  width: 150px;
+  position: relative;
+  top: 10px;
+}
+
+.playlist-detail .track-list-right-side i {
+  cursor: pointer;
+}
+
+.playlist-detail .track-list-right-side span {
+  position: relative;
+  top: 3px;
 }
 
 .track-list-right-side .playlist-add-button {

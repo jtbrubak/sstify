@@ -18,4 +18,13 @@ class Api::PlaylistTracksController < ApplicationController
     render 'api/playlists/show'
   end
 
+  def destroy
+    @playlist_track = PlaylistTrack.find(params[:id])
+    if @playlist_track.destroy
+      render json: @playlist_track.id
+    else
+      render json: ['Not found'], status: 404
+    end
+  end
+
 end

@@ -6,6 +6,7 @@ class PlaylistDetail extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
+    this.removeTrack = this.removeTrack.bind(this);
   }
 
   componentWillMount() {
@@ -55,6 +56,10 @@ class PlaylistDetail extends React.Component {
     }
   }
 
+  removeTrack(id) {
+    this.props.removeTrack(id);
+  }
+
   renderTracks(playlist) {
     if (playlist.tracks) {
       return (
@@ -81,6 +86,7 @@ class PlaylistDetail extends React.Component {
                   </div>
                 </div>
                 <div className="track-list-right-side">
+                  <i onClick={() => this.removeTrack(track.id)} className="material-icons">delete</i>
                   <span id="track-length">{this.renderLength(track)}</span>
                 </div>
               </li>)

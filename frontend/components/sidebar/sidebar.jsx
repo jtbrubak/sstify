@@ -36,6 +36,7 @@ class Sidebar extends React.Component {
       this.props.createPlaylist(data).then((playlist) => {
         this.togglePlaylistForm();
         this.props.router.replace(`/playlist/${playlist.id}`);
+        location.reload(true);
       }
     );
   }

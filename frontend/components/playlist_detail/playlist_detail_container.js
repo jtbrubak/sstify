@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchPlaylistDetail, deletePlaylist, removeTrack } from '../../actions/playlist_actions';
+import { receiveCurrentUser } from '../../actions/session_actions';
 import PlaylistDetail from './playlist_detail';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -11,7 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch) => ({
   removeTrack: (data) => dispatch(removeTrack(data)),
   fetchPlaylistDetail: (id) => dispatch(fetchPlaylistDetail(id)),
-  deletePlaylist: (id) => dispatch(deletePlaylist(id))
+  deletePlaylist: (id) => dispatch(deletePlaylist(id)),
 });
 
 export default connect(

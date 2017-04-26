@@ -25,12 +25,14 @@ class UserDetail extends React.Component {
   }
 
   renderButton() {
-    if (this.props.id === this.props.currentUser.id) {
-      return;
-    } else {
-      return (
-        <button className="user-follow-button" onClick={this.toggleFollow}>{this.followStatus()}</button>
-      );
+    if (this.props.currentUser) {
+      if (this.props.id === this.props.currentUser.id) {
+        return;
+      } else {
+        return (
+          <button className="user-follow-button" onClick={this.toggleFollow}>{this.followStatus()}</button>
+        );
+      }
     }
   }
 

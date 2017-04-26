@@ -59,9 +59,9 @@ const Root = ({ store }) => {
             <Route path="/artist/:id" component={ArtistDetailContainer}/>
             <Route path="/playlist/:id" component={PlaylistDetailContainer}/>
             <Route path="/user/:id" component={UserDetailContainer}>
-              <Route path="/user/followed_playlists/:id" component={UserDetailFollowedPlaylistsContainer}/>
-              <Route path="/user/followed_users/:id" component={UserDetailFollowedUsersContainer}/>
-              <Route path="/user/playlists/:id" component={UserDetailPlaylistsContainer}/>
+              <Route path="followed_playlists" component={UserDetailFollowedPlaylistsContainer}/>
+              <Route path="followed_users" component={UserDetailFollowedUsersContainer}/>
+              <Route path="playlists" component={UserDetailPlaylistsContainer}/>
             </Route>
           </Route>
         </Route>

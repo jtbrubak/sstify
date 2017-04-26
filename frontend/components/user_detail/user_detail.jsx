@@ -55,6 +55,9 @@ class UserDetail extends React.Component {
   }
 
   render() {
+    if (!this.props.userDetail) {
+      return (<div></div>);
+    }
     return (
       <div className="content-box">
         <div className="user-header">
@@ -62,12 +65,12 @@ class UserDetail extends React.Component {
           <h1>{this.props.userDetail.username}</h1>
           {this.renderButton()}
           <ul className="user-nav">
-            <li><Link to={`/user/playlists/${this.props.id}`}
-              className={this.checkSelected(`/user/playlists/${this.props.id}`)}>PLAYLISTS</Link></li>
-            <li><Link to={`/user/followed_playlists/${this.props.id}`}
-              className={this.checkSelected(`/user/followed_playlists/${this.props.id}`)}>FOLLOWED PLAYLISTS</Link></li>
-            <li><Link to={`/user/followed_users/${this.props.id}`}
-              className={this.checkSelected(`/user/followed_users/${this.props.id}`)}>FOLLOWED USERS</Link></li>
+            <li><Link to={`/user/${this.props.id}/playlists`}
+              className={this.checkSelected(`/user/${this.props.id}/playlists`)}>PLAYLISTS</Link></li>
+            <li><Link to={`/user/${this.props.id}/followed_playlists`}
+              className={this.checkSelected(`/user/${this.props.id}/followed_playlists`)}>FOLLOWED PLAYLISTS</Link></li>
+            <li><Link to={`/user/${this.props.id}/followed_users`}
+              className={this.checkSelected(`/user/${this.props.id}/followed_users`)}>FOLLOWED USERS</Link></li>
           </ul>
           {this.props.children}
         </div>

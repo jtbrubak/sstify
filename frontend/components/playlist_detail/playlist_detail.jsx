@@ -68,7 +68,7 @@ class PlaylistDetail extends React.Component {
           <img src={image_url}/><br/>
           <span id="playlist-title">{playlist.title}<br/></span>
           <span id="playlist-info">
-            By {playlist.user.username}<br/>
+            By <Link to={`/user/${playlist.user.id}/playlists`}>{playlist.user.username}<br/></Link>
           </span>
           <span id="playlist-info">{playlist.tracks.length} SONGS</span>
           <button className="play-playlist-button">PLAY</button>

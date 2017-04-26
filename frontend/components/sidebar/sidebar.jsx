@@ -13,6 +13,10 @@ class Sidebar extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillMount() {
+    this.props.fetchCurrentUserDetail(this.props.currentUser.id);
+  }
+
   handleClick(e) {
     e.preventDefault();
     this.props.logout().then(() => this.props.router.replace('/'));
@@ -26,7 +30,9 @@ class Sidebar extends React.Component {
 
   renderUsername() {
     if (this.props.currentUser) {
-      return this.props.currentUser.username;
+      return (
+        <Link className={this.checkCurrent(`/user/${this.props.currentUser.id}`)} to={`/user/${this.props.currentUser.id}`}>{this.props.currentUser.username}</Link>
+      );
     }
   }
 
@@ -36,7 +42,7 @@ class Sidebar extends React.Component {
       this.props.createPlaylist(data).then((playlist) => {
         this.togglePlaylistForm();
         this.props.router.replace(`/playlist/${playlist.id}`);
-        location.reload(true);
+        this.props.fetchCurrentUserDetail(this.props.currentUser.id);
       }
     );
   }
@@ -54,12 +60,12 @@ class Sidebar extends React.Component {
   }
 
   renderPlaylists() {
-    if (this.props.currentUser) {
+    if (this.props.currentUserDetail.playlists) {
       return (
         <ul>
           {
-            this.props.currentUser.playlists.map((playlist) => (
-              <Link to={`/playlist/${playlist.id}`} className={this.checkCurrent(`playlist/${playlist.id}`)}>
+            this.props.currentUserDetail.playlists.map((playlist) => (
+              <Link key={playlist.id} to={`/playlist/${playlist.id}`} className={this.checkCurrent(`playlist/${playlist.id}`)}>
                 <li>{playlist.title}</li>
               </Link>
             ))

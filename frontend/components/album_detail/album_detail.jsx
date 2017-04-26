@@ -32,20 +32,22 @@ class AlbumDetail extends React.Component {
   }
 
   renderDropdown(tracks) {
-    return (
-      <div>
-        <span>Add to Playlist</span>
-        <ul>
-          {
-            this.props.currentUser.playlists.map((playlist) => (
-              <li onClick={() => this.addTracksToPlaylist(tracks, playlist.id)} key={playlist.id}>
-                <Link>{playlist.title}</Link>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-    );
+    if (this.props.currentUserDetail) {
+      return (
+        <div>
+          <span>Add to Playlist</span>
+          <ul>
+            {
+              this.props.currentUserDetail.playlists.map((playlist) => (
+                <li onClick={() => this.addTracksToPlaylist(tracks, playlist.id)} key={playlist.id}>
+                  <Link>{playlist.title}</Link>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      );
+    }
   }
 
   renderTrackDropdown(track, i) {
@@ -55,7 +57,7 @@ class AlbumDetail extends React.Component {
           <span>Add to Playlist</span>
           <ul>
             {
-              this.props.currentUser.playlists.map((playlist) => (
+              this.props.currentUserDetail.playlists.map((playlist) => (
                 <li onClick={() => this.addTracksToPlaylist([track], playlist.id)} key={playlist.id}>
                   {playlist.title}
                 </li>

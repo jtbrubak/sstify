@@ -18,9 +18,6 @@ class User < ActiveRecord::Base
   has_many :followed_playlists,
     through: :playlist_follows,
     source: :playlist
-  has_many :followers,
-    through: :user_follows,
-    source: :follower
   has_many :followed_users,
     through: :user_follows,
     source: :followed
@@ -55,7 +52,6 @@ class User < ActiveRecord::Base
   private
 
   def ensure_session_token
-    # Lazy: very low probability of collision, but we should fix this.
     self.session_token ||= self.class.generate_session_token
   end
 end

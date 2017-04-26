@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
-import UserDetailFollowedUsers from './user_detail';
+import { fetchUserDetail } from '../../actions/user_actions';
+import UserDetailFollowedUsers from './user_detail_followed_users';
 
 const mapStateToProps = (state, ownProps) => ({
-  UserDetail: state.userDetail,
+  userDetail: state.userDetail,
   id: parseInt(ownProps.params.id)
 });
 
 const mapDispatchToProps = (dispatch) => ({
-
+  fetchUserDetail: (id) => dispatch(fetchUserDetail(id))
 });
 
 export default connect(

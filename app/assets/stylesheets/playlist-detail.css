@@ -156,6 +156,7 @@
 
 #playlist-info a:hover {
   text-decoration: underline;
+  color: white;
 }
 
 @media all and (max-width: 700px) {

@@ -32,7 +32,7 @@ class AlbumDetail extends React.Component {
   }
 
   renderDropdown(tracks) {
-    if (this.props.currentUserDetail) {
+    if (this.props.currentUserDetail.playlists) {
       return (
         <div>
           <span>Add to Playlist</span>

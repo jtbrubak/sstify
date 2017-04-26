@@ -31,7 +31,7 @@ class Sidebar extends React.Component {
   renderUsername() {
     if (this.props.currentUser) {
       return (
-        <Link className={this.checkCurrent(`/user/${this.props.currentUser.id}`)} to={`/user/${this.props.currentUser.id}`}>{this.props.currentUser.username}</Link>
+        <Link className={this.checkCurrent(`/user/${this.props.currentUser.id}`)} to={`/user/${this.props.currentUser.id}/playlists`}>{this.props.currentUser.username}</Link>
       );
     }
   }

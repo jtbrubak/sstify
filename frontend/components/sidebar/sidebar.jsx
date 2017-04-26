@@ -53,12 +53,14 @@ class Sidebar extends React.Component {
   }
 
   renderPlaylists() {
-    if (this.props.currentUser.playlists) {
+    if (this.props.currentUser) {
       return (
         <ul>
           {
             this.props.currentUser.playlists.map((playlist) => (
-              <Link to={`/playlist/${playlist.id}`}><li>{playlist.title}</li></Link>
+              <Link to={`/playlist/${playlist.id}`} className={this.checkCurrent(`playlist/${playlist.id}`)}>
+                <li>{playlist.title}</li>
+              </Link>
             ))
           }
         </ul>

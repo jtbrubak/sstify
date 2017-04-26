@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPlaylistDetail, deletePlaylist } from '../../actions/playlist_actions';
+import { fetchPlaylistDetail, deletePlaylist, removeTrack } from '../../actions/playlist_actions';
 import PlaylistDetail from './playlist_detail';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  removeTrack: (data) => dispatch(removeTrack(data)),
   fetchPlaylistDetail: (id) => dispatch(fetchPlaylistDetail(id)),
   deletePlaylist: (id) => dispatch(deletePlaylist(id))
 });

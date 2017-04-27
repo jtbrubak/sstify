@@ -5,22 +5,31 @@ class ArtistDetail extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleButton = this.handleButton.bind(this);
   }
 
   componentWillMount() {
     this.props.fetchArtistDetail(this.props.id);
   }
 
+  handleButton() {
+    let tracks = [];
+    this.props.artistDetail.albums.forEach((album) => {
+      tracks = tracks.concat(album.tracks);
+    });
+    this.props.updateNowPlaying({ played: [], queue: tracks });
+  }
+
   renderBanner(artist) {
     if (artist.image_url) {
       const bannerImage = {
         background: `linear-gradient(rgba(84,72,72,.6), rgba(84,72,72,.6)), url("${artist.image_url}")`,
-        backgroundSize: '100% 100%'
+        backgroundSize: '70% 100%'
       };
       return (
         <div className="banner" style={bannerImage}>
           <span>{artist.name}</span>
-          <button>P L A Y</button>
+          <button onClick={this.handleButton}>P L A Y</button>
         </div>
       );
     }

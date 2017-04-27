@@ -17,7 +17,8 @@ const RootReducer = combineReducers({
   playlistDetail: PlaylistReducer,
   userDetail: UserReducer,
   currentUserDetail: CurrentUserDetailReducer,
-  nowPlaying: NowPlayingReducer
+  nowPlaying: NowPlayingReducer,
+  searchResults: SearchReducer
 });
 
 export default RootReducer;

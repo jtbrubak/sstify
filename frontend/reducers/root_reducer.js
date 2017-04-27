@@ -8,6 +8,7 @@ import PlaylistReducer from './playlist_reducer';
 import UserReducer from './user_reducer';
 import CurrentUserDetailReducer from './current_user_detail_reducer.js';
 import NowPlayingReducer from './now_playing_reducer';
+import SearchReducer from './search_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,

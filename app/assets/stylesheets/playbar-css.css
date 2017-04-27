@@ -7,8 +7,9 @@
 
 .play-controls {
   color: gray;
-  width: 7%;
+  width: 130px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -23,4 +24,16 @@
 
 .play-icon {
   size: 24px;
+}
+
+.hidden {
+  display: none;
+}
+
+#audio-play-button {
+  font-size: 36px;
+}
+
+#audio-pause-button {
+  font-size: 36px;
 }

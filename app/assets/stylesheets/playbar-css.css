@@ -13,6 +13,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin-right: 50px;
 }
 
 .play-controls i {
@@ -41,6 +42,10 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.play-scroll-bar progress:hover {
+  cursor: pointer;
 }
 
 progress::-webkit-progress-bar {

@@ -6,5 +6,7 @@ json.albums @artist.albums.includes(:tracks).order('year DESC') do |album|
   json.tracks album.tracks.order('album_ord') do |track|
     json.extract! track, :title, :album_ord, :length, :id
     json.url track.audio.url
+    json.artist track.album.artist
+    json.image_url track.album.image.url
   end
 end

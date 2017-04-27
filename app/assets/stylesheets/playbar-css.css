@@ -1,14 +1,16 @@
 .playbar {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 
 .play-controls {
+  height: 70%;
   color: gray;
   width: 130px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
@@ -20,6 +22,12 @@
 .play-controls i:hover {
   color: white;
   cursor: pointer;
+}
+
+.control-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .play-icon {
@@ -36,4 +44,44 @@
 
 #audio-pause-button {
   font-size: 36px;
+}
+
+.now-playing-info {
+  display: flex;
+  margin-left: 20px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.now-playing-spans {
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.now-playing-spans span:first-child {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.now-playing-spans span:first-child {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.now-playing-spans span:last-child {
+  font-size: 12px;
+  color: gray;
+  font-family: 'Muli';
+}
+
+.now-playing-spans span:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.now-playing-info img {
+  height: 60px;
+  width: 60px;
 }

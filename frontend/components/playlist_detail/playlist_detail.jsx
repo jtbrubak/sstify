@@ -9,6 +9,8 @@ class PlaylistDetail extends React.Component {
     this.removeTrack = this.removeTrack.bind(this);
     this.followStatus = this.followStatus.bind(this);
     this.toggleFollow = this.toggleFollow.bind(this);
+    this.handlePlaylistButton = this.handlePlaylistButton.bind(this);
+    this.handleTrackButton = this.handleTrackButton.bind(this);
   }
 
   componentWillMount() {
@@ -42,6 +44,15 @@ class PlaylistDetail extends React.Component {
     }
   }
 
+  handlePlaylistButton() {
+    this.props.updateNowPlaying({ played: [], queue: this.props.playlistDetail.tracks });
+  }
+
+  handleTrackButton(i) {
+    const tracks = this.props.playlistDetail.tracks;
+    this.props.updateNowPlaying({ played: tracks.slice(0, i), queue: tracks.slice(i) });
+  }
+
   toggleFollow() {
     if (this.followStatus() === "FOLLOW") {
       this.props.createPlaylistFollow({ playlist_follow: { user_id: this.props.currentUser.id, playlist_id: this.props.playlistDetail.id } });
@@ -73,7 +84,7 @@ class PlaylistDetail extends React.Component {
             By <Link to={`/user/${playlist.user.id}/playlists`}>{playlist.user.username}<br/></Link>
           </span>
           <span id="playlist-info">{playlist.tracks.length} SONGS</span>
-          <button className="play-playlist-button">PLAY</button>
+          <button onClick={this.handlePlaylistButton} className="play-playlist-button">PLAY</button>
           {this.renderButton()}
         </div>
       );
@@ -95,7 +106,7 @@ class PlaylistDetail extends React.Component {
                   <div className='before-track-name'>
                     <button className='play-pause-button'>
                       <span className='track-num'>{i+1}.</span>
-                      <span className='play-button'></span>
+                      <span onClick={() => this.handleTrackButton(i)} className='play-button'></span>
                     </button>
                   </div>
                   <div className="track-list-left-side">

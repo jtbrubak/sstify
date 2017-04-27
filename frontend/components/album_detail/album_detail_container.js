@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchAlbumDetail } from '../../actions/album_actions';
-import { addTracksToPlaylist } from '../../actions/playlist_actions';
+import { updateNowPlaying } from '../../actions/now_playing_actions';
 import AlbumDetail from './album_detail';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchAlbumDetail: (id) => dispatch(fetchAlbumDetail(id)),
-  addTracksToPlaylist: (data) => dispatch(addTracksToPlaylist(data))
+  updateNowPlaying: (tracks) => dispatch(updateNowPlaying(tracks))
 });
 
 export default connect(

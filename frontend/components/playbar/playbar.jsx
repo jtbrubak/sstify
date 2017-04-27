@@ -10,6 +10,7 @@ class Playbar extends React.Component {
     this.previousTrack = this.previousTrack.bind(this);
     this.pause = this.pause.bind(this);
     this.play = this.play.bind(this);
+    this.updateElapsed = this.updateElapsed.bind(this);
   }
 
   currentTrack() {
@@ -85,6 +86,12 @@ class Playbar extends React.Component {
     }
   }
 
+  updateElapsed() {
+    if (this.audio !== undefined) {
+      this.setState({ elapsed: this.audio.currentTime });
+    }
+  }
+
   renderLength(length) {
     if (this.audio) {
       const seconds = length % 60 < 10 ? `0${Math.floor(length % 60)}` : Math.floor(length % 60);
@@ -96,8 +103,8 @@ class Playbar extends React.Component {
     if (this.audio !== undefined) {
       return (
         <div className="play-scroll-bar">
-          {this.renderLength(this.audio.currentTime)}
-          {this.renderLength(this.audio.duration)}
+          {this.renderLength(this.state.elapsed)}
+          {this.renderLength(this.state.queue[0].length)}
         </div>
       );
     }
@@ -107,7 +114,9 @@ class Playbar extends React.Component {
     return (
       <div className="playbar">
         <audio onEnded={this.nextTrack}
-          ref={ audio => { this.audio = audio; } } src={this.currentTrack()} autoPlay id="audio-player">
+          onTimeUpdate={this.updateElapsed}
+          ref={ audio => { this.audio = audio; } }
+          src={this.currentTrack()} autoPlay id="audio-player">
         </audio>
         {this.renderNowPlayingInfo()}
         <div className="play-controls">

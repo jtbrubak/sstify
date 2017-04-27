@@ -11,6 +11,7 @@ class Playbar extends React.Component {
     this.pause = this.pause.bind(this);
     this.play = this.play.bind(this);
     this.updateElapsed = this.updateElapsed.bind(this);
+    this.handleScrollClick = this.handleScrollClick.bind(this);
   }
 
   currentTrack() {
@@ -76,7 +77,7 @@ class Playbar extends React.Component {
               <Link to={`/album/${nowPlaying.album_id}`}>{nowPlaying.title}</Link>
             </span>
             <span>
-              <Link to={`/artist/${nowPlaying.artist_id}`}>{nowPlaying.artist}</Link>
+              <Link to={`/artist/${nowPlaying.artist_id}`}>{nowPlaying.artist.name}</Link>
             </span>
           </div>
         </div>
@@ -99,12 +100,23 @@ class Playbar extends React.Component {
     }
   }
 
+  handleScrollClick(e) {
+    e.preventDefault();
+    const timelineWidth = this.scrollbar.getBoundingClientRect().width;
+    const timelineLeft = this.scrollbar.getBoundingClientRect().left;
+    const clickPos = (e.clientX - timelineLeft) / timelineWidth;
+
+    this.audio.currentTime = this.audio.duration * clickPos;
+    this.setState({ elapsed: this.audio.currentTime });
+  }
+
   renderScrollBar() {
     if (this.audio) {
       return (
         <div className="play-scroll-bar">
           <span>{this.renderLength(this.state.elapsed)}</span>
-          <progress value={(this.state.elapsed/this.state.queue[0].length) * 100} max="100"></progress>
+          <progress ref={ scrollbar => { this.scrollbar = scrollbar; } }
+            onClick={this.handleScrollClick} value={(this.state.elapsed/this.state.queue[0].length) * 100} max="100"></progress>
           <span>{this.renderLength(this.state.queue[0].length)}</span>
         </div>
       );

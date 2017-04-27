@@ -101,7 +101,7 @@ class PlaylistDetail extends React.Component {
         <div className="track-list">
           <ol>
             {playlist.tracks.map((track, i) =>
-              <li key={i+1}>
+              <li key={i+1} onDoubleClick={() => this.handleTrackButton(i)}>
                 <div className="playlist-track-display">
                   <div className='before-track-name'>
                     <button className='play-pause-button'>

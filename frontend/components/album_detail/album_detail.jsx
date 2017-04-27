@@ -112,7 +112,7 @@ class AlbumDetail extends React.Component {
           <ol>
             {
               album.tracks.map((track, i) =>
-              <li key={i+1}>
+              <li key={i+1} onDoubleClick={() => this.handleTrackButton(i)}>
                 <div className="track-list-left-side">
                   <button className='play-pause-button'>
                     <span className='track-num'>{i+1}.</span>

@@ -12,6 +12,7 @@ class Playbar extends React.Component {
     this.play = this.play.bind(this);
     this.updateElapsed = this.updateElapsed.bind(this);
     this.handleScrollClick = this.handleScrollClick.bind(this);
+    this.changeVolume = this.changeVolume.bind(this);
   }
 
   currentTrack() {
@@ -131,6 +132,10 @@ class Playbar extends React.Component {
     }
   }
 
+  changeVolume(e) {
+    this.audio.volume = (e.currentTarget.value);
+  }
+
   render() {
     return (
       <div className="playbar">
@@ -150,7 +155,8 @@ class Playbar extends React.Component {
           {this.renderScrollBar()}
         </div>
         <div className="volume-control">
-          <input type="range" id="rngVolume" min="0" max="1" step="0.01" default="1"/>
+          <i className="material-icons">volume_up</i>
+          <input onChange={this.changeVolume} type="range" id="rngVolume" min="0" max="1" step="0.01" default="1"/>
         </div>
       </div>
     );

@@ -8,7 +8,7 @@
 .play-controls {
   height: 70%;
   color: gray;
-  width: 130px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,11 +24,51 @@
   cursor: pointer;
 }
 
+.play-scroll-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.play-scroll-bar span {
+  font-size: 12px;
+}
+
+.play-scroll-bar progress {
+  margin: 0px 10px 0px 10px;
+  width: 500px;
+  height: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background: gray;
+  border-radius: 100px;
+}
+
+progress::-moz-progress-bar {
+  background: gray;
+  border-radius: 100px;
+}
+
+progress::-webkit-progress-value {
+  background: white;
+  border-radius: 100px;
+}
+
+progress::-moz-progress-value {
+  background: white;
+  border-radius: 100px;
+}
+
 .control-buttons {
   display: flex;
   flex-direction: row;
   align-items: center;
-  wdith: 100%;
+  width: 100%;
+  justify-content: center;
 }
 
 .play-icon {
@@ -41,10 +81,12 @@
 
 #audio-play-button {
   font-size: 36px;
+  margin: 0px 15px 0px 15px;
 }
 
 #audio-pause-button {
   font-size: 36px;
+  margin: 0px 15px 0px 15px;
 }
 
 .now-playing-info {
@@ -52,6 +94,7 @@
   margin-left: 20px;
   width: 300px;
   overflow: hidden;
+  border: 1px solid #353131;
 }
 
 .now-playing-spans {

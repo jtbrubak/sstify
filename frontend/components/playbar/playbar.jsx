@@ -82,7 +82,7 @@ class Playbar extends React.Component {
         </div>
       );
     } else {
-      return (<div></div>);
+      return (<div className="now-playing-info"></div>);
     }
   }
 
@@ -100,11 +100,20 @@ class Playbar extends React.Component {
   }
 
   renderScrollBar() {
-    if (this.audio !== undefined) {
+    if (this.audio) {
       return (
         <div className="play-scroll-bar">
-          {this.renderLength(this.state.elapsed)}
-          {this.renderLength(this.state.queue[0].length)}
+          <span>{this.renderLength(this.state.elapsed)}</span>
+          <progress value={(this.state.elapsed/this.state.queue[0].length) * 100} max="100"></progress>
+          <span>{this.renderLength(this.state.queue[0].length)}</span>
+        </div>
+      );
+    } else {
+      return (
+        <div className="play-scroll-bar">
+          <span>0:00</span>
+          <progress value="0" max="100"></progress>
+          <span>0:00</span>
         </div>
       );
     }

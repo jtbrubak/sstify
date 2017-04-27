@@ -7,6 +7,7 @@ import BrowseReducer from './browse_reducer';
 import PlaylistReducer from './playlist_reducer';
 import UserReducer from './user_reducer';
 import CurrentUserDetailReducer from './current_user_detail_reducer.js';
+import NowPlayingReducer from './now_playing_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -15,7 +16,8 @@ const RootReducer = combineReducers({
   browse: BrowseReducer,
   playlistDetail: PlaylistReducer,
   userDetail: UserReducer,
-  currentUserDetail: CurrentUserDetailReducer
+  currentUserDetail: CurrentUserDetailReducer,
+  nowPlaying: NowPlayingReducer
 });
 
 export default RootReducer;

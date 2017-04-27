@@ -1,0 +1,26 @@
+.playbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-controls {
+  color: gray;
+  width: 7%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.play-controls i {
+  font-size: 24px;
+}
+
+.play-controls i:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.play-icon {
+  size: 24px;
+}

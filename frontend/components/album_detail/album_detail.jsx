@@ -8,6 +8,8 @@ class AlbumDetail extends React.Component {
     this.state = { showAlbumDropdown: false, showTrackDropdown: null };
     this.toggleAlbumDropdown = this.toggleAlbumDropdown.bind(this);
     this.toggleTrackDropdown = this.toggleTrackDropdown.bind(this);
+    this.handleAlbumButton = this.handleAlbumButton.bind(this);
+    this.handleTrackButton = this.handleTrackButton.bind(this);
   }
 
   componentWillMount() {
@@ -29,6 +31,15 @@ class AlbumDetail extends React.Component {
     } else {
       this.setState({showTrackDropdown: null});
     }
+  }
+
+  handleAlbumButton() {
+    this.props.updateNowPlaying({ played: [], queue: this.props.albumDetail.tracks });
+  }
+
+  handleTrackButton(i) {
+    const tracks = this.props.albumDetail.tracks;
+    this.props.updateNowPlaying({ played: tracks.slice(0, i), queue: tracks.slice(i) });
   }
 
   renderDropdown(tracks) {
@@ -84,7 +95,7 @@ class AlbumDetail extends React.Component {
             By <Link to={`/artist/${album.artist.id}`}>{album.artist.name}</Link><br/>
           </span>
           <span id="album-info">{album.tracks.length} SONGS</span>
-          <button className="play-album-button">PLAY</button>
+          <button onClick={this.handleAlbumButton} className="play-album-button">PLAY</button>
           <button className="playlist-add-button"  onClick={this.toggleAlbumDropdown}>. . .</button>
           <div className={this.showAlbumDropdown()}>
             {this.renderDropdown(album.tracks)}
@@ -105,7 +116,7 @@ class AlbumDetail extends React.Component {
                 <div className="track-list-left-side">
                   <button className='play-pause-button'>
                     <span className='track-num'>{i+1}.</span>
-                    <span className='play-button'></span>
+                    <span onClick={() => this.handleTrackButton(i)} className='play-button'></span>
                   </button>
                   <span id="track-title">{track.title}</span>
                 </div>

@@ -12,6 +12,8 @@ json.tracks @tracks do |track|
   json.artist track.album.artist
   json.url track.audio.url
   json.image_url track.album.image.url
+  json.artist_id track.album.artist.id
+  json.album_id track.album.id
 end
 json.playlists @playlists do |playlist|
   json.extract! playlist, :id, :title

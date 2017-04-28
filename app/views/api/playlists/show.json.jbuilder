@@ -8,5 +8,7 @@ json.tracks @playlist.playlist_tracks.order('playlist_ord') do |playlist_track|
   json.artist playlist_track.track.album.artist
   json.track_id playlist_track.track.id
   json.url playlist_track.track.audio.url
+  json.album_id playlist_track.track.album.id
+  json.artist_id playlist_track.track.album.artist.id
   json.image_url playlist_track.track.album.image.url
 end

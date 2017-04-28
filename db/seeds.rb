@@ -71,28 +71,103 @@ tracks = [
 "https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+06+-+the+swinging+man.mp3",
 "https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+07+-+nothing+left+inside.mp3",
 "https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+08+-+three+nights.mp3",
-"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+09+-+scream.mp3"
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Black+Flag+-+My+War/black+flag+-+my+war+-+09+-+scream.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/01+rise+above.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/02+spray+paint.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/03+six+pack.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/04+what+i+see.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/05+tv+party.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/06+thirsty+and+miserable.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/07+police+story.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/08+gimmie+gimmie+gimmie.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/09+depression.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/10+room+13.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/11+damaged+ii.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/12+no+more.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/13+padded+cell.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/14+life+of+pain.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Damaged/15+damaged+i.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Mournful+Cries/01+the+creeps.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Mournful+Cries/02+dragon+time.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Mournful+Cries/03+shooting+gallery.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Mournful+Cries/04+bitter+truth.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Mournful+Cries/05+the+troll.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Mournful+Cries/06+looking+glass.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Sister/01+-+schizophrenia.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Sister/02+-+(i+got+a)+catholic+block.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Sister/03+-+beauty+lies+in+the+eye.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Sister/04+-+stereo+sanctity.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Sister/05+-+pipeline+kill+time.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Sister/06+-+tuff+gnarl.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Sister/07+-+pacific+coast+highway.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Sister/08+-+hot+wire+my+heart.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Sister/09+-+kotton+krown.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Sister/10+-+white+kross.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/We+Became+Snakes/01+we+became+snakes.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/We+Became+Snakes/02+drugstore+logic.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/We+Became+Snakes/03+frankie+on+a+pony.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/We+Became+Snakes/04+the+need.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/We+Became+Snakes/05+for+her+while.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/We+Became+Snakes/06+effort+to+waste.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/We+Became+Snakes/07+the+redeemer.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/We+Became+Snakes/08+longing+for+ether.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/You\'re+Living+All+Over+Me/dinosaur+jr.+-+you\'re+living+all+over+me+-+01+-+little+fury+things.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/You\'re+Living+All+Over+Me/dinosaur+jr.+-+you\'re+living+all+over+me+-+02+-+kracked.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/You\'re+Living+All+Over+Me/dinosaur+jr.+-+you\'re+living+all+over+me+-+03+-+sludgefeast.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/You\'re+Living+All+Over+Me/dinosaur+jr.+-+you\'re+living+all+over+me+-+04+-+the+lung.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/You\'re+Living+All+Over+Me/dinosaur+jr.+-+you\'re+living+all+over+me+-+05+-+raisans.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/You\'re+Living+All+Over+Me/dinosaur+jr.+-+you\'re+living+all+over+me+-+06+-+tarpit.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/You\'re+Living+All+Over+Me/dinosaur+jr.+-+you\'re+living+all+over+me+-+07+-+in+a+jar.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/You\'re+Living+All+Over+Me/dinosaur+jr.+-+you\'re+living+all+over+me+-+08+-+lose.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/You\'re+Living+All+Over+Me/dinosaur+jr.+-+you\'re+living+all+over+me+-+09+-+poledo.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/01+something+i+learned+today.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/02+broken+home,+broken+heart.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/03+never+talking+to+you+again.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/04+chartered+trips.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/05+dreams+reoccurring.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/06+indecision+time.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/07+hare+krsna.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/08+beyond+the+threshold.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/09+pride.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/10+i\'ll+never+forget+you.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/11+the+biggest+lie.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/12+what\'s+going+on.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/13+masochism+world.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/14+standing+by+the+sea.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/15+somewhere.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/16+one+step+at+a+time.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/17+pink+turns+to+blue.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/18+newest+industry.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/19+monday+will+never+be+the+same.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/20+whatever.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/21+the+tooth+fairy+and+the+princess.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/22+turn+on+the+news.mp3",
+"https://s3.amazonaws.com/sstify-dev/seeds/tracks/Zen+Arcade/23+reoccurring+dreams.mp3"
 ]
-
-User.destroy_all
-User.create(username: 'guest', password: 'password')
+# User.destroy_all
+# User.create(username: 'guest', password: 'password')
 
 Artist.destroy_all
 Artist.create(name: 'Black Flag', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/black_flag.jpg")
 Artist.create(name: 'Minutemen', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/minutemen.jpg")
 Artist.create(name: 'Sonic Youth', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/sonic_youth.jpg")
 Artist.create(name: 'Meat Puppets', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/meat_puppets.jpg")
+Artist.create(name: 'Dinosaur Jr.', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/dinosaur_jr.jpeg")
+Artist.create(name: 'Hüsker Dü', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/husker_du.jpg")
+Artist.create(name: 'Saccharine Trust', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/saccharine_trust.jpg")
+Artist.create(name: 'Saint Vitus', image: "https://s3.amazonaws.com/sstify-dev/seeds/artists/saint_vitus.jpg")
 
 Album.destroy_all
 Album.create(artist: Artist.find_by_name('Black Flag'), title: 'Damaged', year: 1983, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/damaged.jpg')
 Album.create(artist: Artist.find_by_name('Black Flag'), title: 'My War', year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/my_war.jpg')
-Album.create(artist: Artist.find_by_name('Black Flag'), title: 'Family Man', year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/family_man.jpg')
-Album.create(artist: Artist.find_by_name('Black Flag'), title: 'Slip It In', year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/slip_it_in.jpg')
-Album.create(artist: Artist.find_by_name('Black Flag'), title: 'Loose Nut', year: 1985, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/loose_nut.jpg')
-Album.create(artist: Artist.find_by_name('Black Flag'), title: 'In My Head', year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/in_my_head.jpg')
 Album.create(artist: Artist.find_by_name('Sonic Youth'), title: "EVOL", year: 1986, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/evol.jpg')
 Album.create(artist: Artist.find_by_name('Minutemen'), title: "Double Nickels on the Dime", year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/double_nickels.jpg')
 Album.create(artist: Artist.find_by_name('Meat Puppets'), title: 'Meat Puppets II', year: 1984, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/meat_puppets_ii.png')
+Album.create(artist: Artist.find_by_name('Saint Vitus'), title: 'Mournful Cries', year: 1988, image: 'https://s3.amazonaws.com/sstify-dev/seeds/albums/mournful_cries.jpg')
+Album.create(artist: Artist.find_by_name('Sonic Youth'), title: 'Sister', year: 1987, image: "https://s3.amazonaws.com/sstify-dev/seeds/albums/sister.jpg")
+Album.create(artist: Artist.find_by_name('Saccharine Trust'), title: 'We Became Snakes', year: 1986, image: "https://s3.amazonaws.com/sstify-dev/seeds/albums/we_became_snakes.jpg")
+Album.create(artist: Artist.find_by_name('Dinosaur Jr.'), title: "You\'re Living All Over Me", year: 1987, image: "https://s3.amazonaws.com/sstify-dev/seeds/albums/youre_living_all_over_me.jpg")
+Album.create(artist: Artist.find_by_name('Hüsker Dü'), title: "Zen Arcade", year: 1984, image: "https://s3.amazonaws.com/sstify-dev/seeds/albums/zen_arcade.jpg")
 
 
 Track.destroy_all

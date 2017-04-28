@@ -84,8 +84,8 @@ class Sidebar extends React.Component {
               <img src="https://s3.amazonaws.com/sstify-dev/images/logo.png"/><span>SSTify</span>
             </div>
             <div className="sidebar-search">
-              <Link to={'/search'}><span>Search</span>
-              <span><i className="material-icons">search</i></span></Link>
+              <Link to={'/search'}><span className={this.checkCurrent('search')}>Search</span>
+              <span className={this.checkCurrent('search')}><i className="material-icons">search</i></span></Link>
             </div>
             <div className="browse-link">
               <Link to="/browse/artists" className={this.checkCurrent('browse')}><span>Browse</span></Link>

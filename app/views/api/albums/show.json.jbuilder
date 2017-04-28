@@ -6,5 +6,6 @@ json.tracks @album.tracks.order('album_ord') do |track|
   json.url track.audio.url
   json.artist track.album.artist
   json.artist_id track.album.artist.id
+  json.album_id track.album.id
   json.image_url track.album.image.url
 end

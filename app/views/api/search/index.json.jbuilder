@@ -8,8 +8,14 @@ json.albums @albums do |album|
   json.image_url album.image.url(:thumb)
 end
 json.tracks @tracks do |track|
-  json.extract! track, :id, :title, :album, :artist, :length
+  json.extract! track, :id, :title, :album, :length
+  json.artist track.album.artist
+  json.url track.audio.url
+  json.image_url track.album.image.url
 end
 json.playlists @playlists do |playlist|
   json.extract! playlist, :id, :title
+end
+json.users @users do |user|
+  json.extract! user, :id, :username
 end

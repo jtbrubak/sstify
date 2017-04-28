@@ -17,6 +17,7 @@ import UserDetailContainer from './user_detail/user_detail_container';
 import UserDetailFollowedPlaylistsContainer from './user_detail/user_detail_followed_playlists_container';
 import UserDetailFollowedUsersContainer from './user_detail/user_detail_followed_users_container';
 import UserDetailPlaylistsContainer from './user_detail/user_detail_playlists_container';
+import SearchContainer from './search/search_container';
 
 const Root = ({ store }) => {
 
@@ -63,6 +64,7 @@ const Root = ({ store }) => {
               <Route path="followed_users" component={UserDetailFollowedUsersContainer}/>
               <Route path="playlists" component={UserDetailPlaylistsContainer}/>
             </Route>
+            <Route path="/search" component={SearchContainer}/>
           </Route>
         </Route>
       </Router>

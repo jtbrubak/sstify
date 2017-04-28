@@ -85,7 +85,7 @@ class Sidebar extends React.Component {
             </div>
             <div className="sidebar-search">
               <Link to={'/search'}><span>Search</span>
-              <i className="material-icons">search</i></Link>
+              <span><i className="material-icons">search</i></span></Link>
             </div>
             <div className="browse-link">
               <Link to="/browse/artists" className={this.checkCurrent('browse')}><span>Browse</span></Link>

@@ -27,6 +27,7 @@ class Playbar extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    debugger
     this.setState({ played: nextProps.nowPlaying.played, queue: nextProps.nowPlaying.queue, status: 'play' });
   }
 

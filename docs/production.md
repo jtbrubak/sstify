@@ -1,12 +1,12 @@
-#SSTify
+# SSTify
 
 [SSTify live](https://sstify.herokuapp.com)
 
 SSTify is a full-stack web application inspired by Spotify and created as a tribute to the catalog of the legendary SST Records. It's built on a Ruby on Rails backend, a PostgreSQL database, and a Reactjs/Redux frontend.
 
-##Features and Implementation
+## Features and Implementation
 
-#Asynchronous Music Playback
+# Asynchronous Music Playback
 
 ![playbar]
 
@@ -18,12 +18,12 @@ SSTify's music playbar is routed at the root page, allowing it to remain on scre
 
 Users can create playlists at any time using the Add Playlist button located on the sidebar. After the playlist has been created, it immediately shows up in the playlists section of the sidebar, allowing users to have access to their playlists at all times. Users can then add tracks or entire albums to their playlists by clicking the add icons and selecting their desired playlist from the resulting dropdown menu. Playlists are managed in the database through the join table PlaylistTracks, which connects the Playlists and Tracks table. A PlaylistTrack item has foreign keys for the playlist and track, as well as a playlist_ord column, which indicates where in the playlist the track is located.
 
-#Search
+# Search
 
 ![search]
 
 Users can search for artists, albums, tracks, playlists, and users through the search function, conveniently located on the sidebar. Each keystroke the user makes fires off a new AJAX request to the database, populating the store with new results and thus rendering the results immediately on the page. Search has its own backend route, which uses an ActiveRecord 'where' query (including an 'ILIKE' operator to accomodate uppercase/lowercase letters) to find matching items for each category.
 
-[playbar]: ./docs/screenshots/playbar.PNG
-[playlist]: ./docs/screenshots/playlist.PNG
-[search]: ./docs/screenshots/search.PNG
+[playbar]: ./screenshots/playbar.PNG
+[playlist]: ./screenshots/playlist.PNG
+[search]: ./screenshots/search.PNG

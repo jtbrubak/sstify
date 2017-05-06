@@ -23,12 +23,11 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      process: {
-        env: {
-          NODE_ENV: prod? `"production"`: '"development"'
-        }
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
       }
-    })
+    }),
+    new webpack.optimize.UglifyJsPlugin()
   ],
   devtool: 'source-maps',
   resolve: {

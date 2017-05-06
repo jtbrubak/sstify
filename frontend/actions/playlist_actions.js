@@ -12,11 +12,8 @@ export const createPlaylist = playlist => dispatch => (
 	APIUtil.createPlaylist(playlist).then(playlist => {
 		dispatch(receivePlaylistDetail(playlist));
 		return playlist;
-<<<<<<< HEAD
 	})
-=======
 	}).fail(err => console.log(err.responseJSON))
->>>>>>> 77bc2a0c0a3077adf28a4cf37e5e00081831bd60
 );
 
 export const removeTrack = (id) => dispatch => (

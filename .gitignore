@@ -2,10 +2,8 @@ node_modules/
 bundle.js
 bundle.js.map
 tmp/
-<<<<<<< HEAD
+
 npm-debug.log
-=======
->>>>>>> 77bc2a0c0a3077adf28a4cf37e5e00081831bd60
 
 # Ignore application configuration
 /config/application.yml

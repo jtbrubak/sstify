@@ -9,8 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack -p --watch",
-    "webpack": "webpack --watch",
+    "webpack": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors",
     "postinstall": "webpack"
   },
   "keywords": [],

@@ -19,6 +19,15 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      process: {
+        env: {
+          NODE_ENV: prod? `"production"`: '"development"'
+        }
+      }
+    })
+  ]
   devtool: 'source-maps',
   resolve: {
     extensions: [".js", ".jsx", "*"]

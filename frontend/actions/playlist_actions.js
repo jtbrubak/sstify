@@ -13,7 +13,6 @@ export const createPlaylist = playlist => dispatch => (
 		dispatch(receivePlaylistDetail(playlist));
 		return playlist;
 	})
-	}).fail(err => console.log(err.responseJSON))
 );
 
 export const removeTrack = (id) => dispatch => (
@@ -27,11 +26,7 @@ export const deletePlaylist = id => dispatch => (
 );
 
 export const addTracksToPlaylist = data => dispatch => (
-<<<<<<< HEAD
   APIUtil.addTracksToPlaylist(data)
-=======
-  APIUtil.addTracksToPlaylist(data).fail(err => console.log(err.responseJSON))
->>>>>>> 77bc2a0c0a3077adf28a4cf37e5e00081831bd60
 );
 
 export const receivePlaylistDetail = playlist => ({

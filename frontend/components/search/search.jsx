@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class Playbar extends React.Component {
+class Search extends React.Component {
 
   constructor(props) {
     super(props);
@@ -183,4 +183,4 @@ class Playbar extends React.Component {
 
 }
 
-export default Playbar;
+export default Search;

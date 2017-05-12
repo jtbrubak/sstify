@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
+import PlayControls from './play_controls';
+import ScrollBar from './scroll_bar';
 
 class Playbar extends React.Component {
 
@@ -7,11 +9,7 @@ class Playbar extends React.Component {
     super(props);
     this.state = { played: [], queue: [], status: 'pause', elapsed: 0 };
     this.nextTrack = this.nextTrack.bind(this);
-    this.previousTrack = this.previousTrack.bind(this);
-    this.pause = this.pause.bind(this);
-    this.play = this.play.bind(this);
     this.updateElapsed = this.updateElapsed.bind(this);
-    this.handleScrollClick = this.handleScrollClick.bind(this);
     this.changeVolume = this.changeVolume.bind(this);
   }
 
@@ -30,44 +28,11 @@ class Playbar extends React.Component {
     this.setState({ played: nextProps.nowPlaying.played, queue: nextProps.nowPlaying.queue, status: 'play' });
   }
 
-  previousTrack() {
-    const newQueue = this.state.queue;
-    const newPlayed = this.state.played;
-    newQueue.unshift(newPlayed.pop());
-    this.setState({ played: newPlayed, queue: newQueue, status: 'play' });
-  }
-
   nextTrack() {
     const newQueue = this.state.queue;
     const newPlayed = this.state.played;
     newPlayed.push(newQueue.shift());
     this.setState({ played: newPlayed, queue: newQueue, status: 'play' });
-  }
-
-  pause() {
-    this.audio.pause();
-    this.setState({ status: 'pause' });
-  }
-
-  play() {
-    this.audio.play();
-    this.setState({ status: 'play' });
-  }
-
-  pauseStatus() {
-    if (this.state.status === 'play') {
-      return "material-icons";
-    } else {
-      return "hidden";
-    }
-  }
-
-  playStatus() {
-    if (this.state.status === 'play') {
-      return "hidden";
-    } else {
-      return "material-icons";
-    }
   }
 
   renderNowPlayingInfo() {
@@ -100,47 +65,6 @@ class Playbar extends React.Component {
     }
   }
 
-  renderLength(length) {
-    if (this.audio) {
-      const seconds = length % 60 < 10 ? `0${Math.floor(length % 60)}` : Math.floor(length % 60);
-      return `${Math.floor(length / 60)}:${seconds}`;
-    }
-  }
-
-  handleScrollClick(e) {
-    e.preventDefault();
-    const timelineWidth = this.scrollbar.getBoundingClientRect().width;
-    const timelineLeft = this.scrollbar.getBoundingClientRect().left;
-    const clickPos = (e.clientX - timelineLeft) / timelineWidth;
-
-    this.audio.currentTime = this.audio.duration * clickPos;
-    this.setState({ elapsed: this.audio.currentTime });
-  }
-
-  renderScrollBar() {
-    if (!this.state.queue) {
-      return;
-    }
-    if (this.audio) {
-      return (
-        <div className="play-scroll-bar">
-          <span>{this.renderLength(this.state.elapsed)}</span>
-          <progress ref={ scrollbar => { this.scrollbar = scrollbar; } }
-            onClick={this.handleScrollClick} value={(this.state.elapsed/this.state.queue[0].length) * 100} max="100"></progress>
-          <span>{this.renderLength(this.state.queue[0].length)}</span>
-        </div>
-      );
-    } else {
-      return (
-        <div className="play-scroll-bar">
-          <span>0:00</span>
-          <progress value="0" max="100"></progress>
-          <span>0:00</span>
-        </div>
-      );
-    }
-  }
-
   changeVolume(e) {
     this.audio.volume = (e.currentTarget.value);
   }
@@ -155,13 +79,8 @@ class Playbar extends React.Component {
         </audio>
         {this.renderNowPlayingInfo()}
         <div className="play-controls">
-          <div className="control-buttons">
-            <i onClick={this.previousTrack} className="material-icons">skip_previous</i>
-            <i id="audio-play-button" onClick={this.play} className={this.playStatus()}>play_circle_outline</i>
-            <i id="audio-pause-button" onClick={this.pause} className={this.pauseStatus()}>pause_circle_outline</i>
-            <i onClick={this.nextTrack} className="material-icons">skip_next</i>
-          </div>
-          {this.renderScrollBar()}
+          <PlayControls playbar={this}/>
+          <ScrollBar playbar={this} audio={this.audio}/>
         </div>
         <div className="volume-control">
           <i className="material-icons">volume_up</i>
@@ -170,7 +89,6 @@ class Playbar extends React.Component {
       </div>
     );
   }
-
 }
 
 export default Playbar;

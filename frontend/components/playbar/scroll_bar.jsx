@@ -39,7 +39,6 @@ class ScrollBar extends React.Component {
         </div>
       );
     } else {
-      debugger
       return (
         <div className="play-scroll-bar">
           <span>0:00</span>

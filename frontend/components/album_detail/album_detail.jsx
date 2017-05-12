@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import TrackList from './track_list';
 
 class AlbumDetail extends React.Component {
 
@@ -7,9 +8,7 @@ class AlbumDetail extends React.Component {
     super(props);
     this.state = { showAlbumDropdown: false, showTrackDropdown: null };
     this.toggleAlbumDropdown = this.toggleAlbumDropdown.bind(this);
-    this.toggleTrackDropdown = this.toggleTrackDropdown.bind(this);
     this.handleAlbumButton = this.handleAlbumButton.bind(this);
-    this.handleTrackButton = this.handleTrackButton.bind(this);
   }
 
   componentWillMount() {
@@ -25,21 +24,8 @@ class AlbumDetail extends React.Component {
     this.setState({ showAlbumDropdown: newState });
   }
 
-  toggleTrackDropdown(i) {
-    if (this.state.showTrackDropdown === null) {
-      this.setState({showTrackDropdown: i});
-    } else {
-      this.setState({showTrackDropdown: null});
-    }
-  }
-
   handleAlbumButton() {
     this.props.updateNowPlaying({ played: [], queue: this.props.albumDetail.tracks });
-  }
-
-  handleTrackButton(i) {
-    const tracks = this.props.albumDetail.tracks;
-    this.props.updateNowPlaying({ played: tracks.slice(0, i), queue: tracks.slice(i) });
   }
 
   renderDropdown(tracks) {
@@ -52,25 +38,6 @@ class AlbumDetail extends React.Component {
               this.props.currentUserDetail.playlists.map((playlist) => (
                 <li onClick={() => this.addTracksToPlaylist(tracks, playlist.id)} key={playlist.id}>
                   <Link>{playlist.title}</Link>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      );
-    }
-  }
-
-  renderTrackDropdown(track, i) {
-    if (i == this.state.showTrackDropdown) {
-      return (
-        <div className={`track-playlist-add`}>
-          <span>Add to Playlist</span>
-          <ul>
-            {
-              this.props.currentUserDetail.playlists.map((playlist) => (
-                <li onClick={() => this.addTracksToPlaylist([track], playlist.id)} key={playlist.id}>
-                  {playlist.title}
                 </li>
               ))
             }
@@ -105,47 +72,13 @@ class AlbumDetail extends React.Component {
     }
   }
 
-  renderTracks(album) {
-    if (album.tracks) {
-      return (
-        <div className="track-list">
-          <ol>
-            {
-              album.tracks.map((track, i) =>
-              <li key={i+1} onDoubleClick={() => this.handleTrackButton(i)}>
-                <div className="track-list-left-side">
-                  <button className='play-pause-button'>
-                    <span className='track-num'>{i+1}.</span>
-                    <span onClick={() => this.handleTrackButton(i)} className='play-button'></span>
-                  </button>
-                  <span id="track-title">{track.title}</span>
-                </div>
-                <div className="track-list-right-side">
-                  <button className="track-playlist-add-button"
-                    onClick={() => this.toggleTrackDropdown(i+1)}>. . .</button>
-                  <span id="track-length">{this.renderLength(track)}</span>
-                  {this.renderTrackDropdown(track, i+1)}
-                </div>
-              </li>)
-            }
-          </ol>
-        </div>
-      );
-    }
-  }
-
-  renderLength(track) {
-    const seconds = track.length % 60 < 10 ? `0${track.length % 60}` : track.length % 60;
-    return `${Math.floor(track.length / 60)}:${seconds}`;
-  }
-
   render() {
     const album = this.props.albumDetail;
     return (
       <div className="content-box">
         <div className="album-detail">
           {this.renderInfo(album)}
-          {this.renderTracks(album)}
+          <TrackList album={album} parent={this}/>
         </div>
       </div>
     );

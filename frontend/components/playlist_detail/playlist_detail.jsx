@@ -1,16 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
+import PlaylistTracks from './playlist_tracks';
 
 class PlaylistDetail extends React.Component {
 
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
-    this.removeTrack = this.removeTrack.bind(this);
     this.followStatus = this.followStatus.bind(this);
     this.toggleFollow = this.toggleFollow.bind(this);
     this.handlePlaylistButton = this.handlePlaylistButton.bind(this);
-    this.handleTrackButton = this.handleTrackButton.bind(this);
   }
 
   componentWillMount() {
@@ -46,11 +45,6 @@ class PlaylistDetail extends React.Component {
 
   handlePlaylistButton() {
     this.props.updateNowPlaying({ played: [], queue: this.props.playlistDetail.tracks });
-  }
-
-  handleTrackButton(i) {
-    const tracks = this.props.playlistDetail.tracks;
-    this.props.updateNowPlaying({ played: tracks.slice(0, i), queue: tracks.slice(i) });
   }
 
   toggleFollow() {
@@ -91,64 +85,17 @@ class PlaylistDetail extends React.Component {
     }
   }
 
-  removeTrack(id) {
-    this.props.removeTrack(id);
-  }
-
-  renderTracks(playlist) {
-    if (playlist.tracks) {
-      return (
-        <div className="track-list">
-          <ol>
-            {playlist.tracks.map((track, i) =>
-              <li key={i+1} onDoubleClick={() => this.handleTrackButton(i)}>
-                <div className="playlist-track-display">
-                  <div className='before-track-name'>
-                    <button className='play-pause-button'>
-                      <span className='track-num'>{i+1}.</span>
-                      <span onClick={() => this.handleTrackButton(i)} className='play-button'></span>
-                    </button>
-                  </div>
-                  <div className="track-list-left-side">
-                    <div className="first-line">
-                      <span id="track-title">{track.title}</span>
-                    </div>
-                    <div className="second-line">
-                      <Link to={`/artist/${track.artist.id}`}><span>{track.artist.name}</span></Link>
-                      <span>·</span>
-                      <Link to={`album/${track.album.id}`}><span>{track.album.title}</span></Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="track-list-right-side">
-                  <i onClick={() => this.removeTrack(track.id)} className="material-icons">delete</i>
-                  <span id="track-length">{this.renderLength(track)}</span>
-                </div>
-              </li>)
-            }
-          </ol>
-        </div>
-      );
-    }
-  }
-
-  renderLength(track) {
-    const seconds = track.length % 60 < 10 ? `0${track.length % 60}` : track.length % 60;
-    return `${Math.floor(track.length / 60)}:${seconds}`;
-  }
-
   render() {
     const playlist = this.props.playlistDetail;
     return (
       <div className="content-box">
         <div className="playlist-detail">
           {this.renderInfo(playlist)}
-          {this.renderTracks(playlist)}
+          <PlaylistTracks parent={this} playlist={this.props.playlistDetail}/>
         </div>
       </div>
     );
   }
-
 }
 
 export default PlaylistDetail;

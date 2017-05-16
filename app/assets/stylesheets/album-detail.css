@@ -179,7 +179,9 @@
   align-self: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  height: 90%;
+  justify-content: flex-start;
   width: 90%;
 }
 
@@ -221,6 +223,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-direction: column;
   flex-wrap: wrap;
   height: 90%;
   width: 90%;

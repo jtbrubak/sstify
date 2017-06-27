@@ -221,10 +221,9 @@
 
 .track-list .track-playlist-add ul {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  flex-wrap: wrap;
   height: 90%;
   width: 90%;
 }
@@ -232,7 +231,7 @@
 
 .track-list .track-playlist-add ul li {
   width: 90%;
-  padding: 5px;
+  padding: 10px;
   margin: 0px;
   cursor: pointer;
 }

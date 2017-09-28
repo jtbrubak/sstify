@@ -27,7 +27,7 @@ class ScrollBar extends React.Component {
 
   render() {
     if (!this.playbar.state.queue) {
-      return;
+      return <div></div>;
     }
     if (this.props.audio) {
       return (

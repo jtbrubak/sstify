@@ -25,8 +25,10 @@ class PlayControls extends React.Component {
   }
 
   play() {
-    this.playbar.audio.play();
-    this.playbar.setState({ status: 'play' });
+    if (this.playbar.state.queue[0]) {
+      this.playbar.audio.play();
+      this.playbar.setState({ status: 'play' });
+    }
   }
 
   pauseStatus() {

@@ -19,7 +19,7 @@ class Sidebar extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    this.props.logout().then(() => this.props.router.replace('/'));
+    this.props.logout().then(() => this.props.router.replace('/login'));
   }
 
   togglePlaylistForm() {
@@ -33,6 +33,8 @@ class Sidebar extends React.Component {
       return (
         <Link className={this.checkCurrent(`/user/${this.props.currentUser.id}`)} to={`/user/${this.props.currentUser.id}/playlists`}>{this.props.currentUser.username}</Link>
       );
+    } else {
+      return <div></div>;
     }
   }
 

@@ -24,8 +24,8 @@ class PlaylistDetail extends React.Component {
 
   handleDelete() {
     this.props.deletePlaylist(this.props.id).then(() => {
-      this.props.router.replace('/browse/artists');
-      location.reload(true);
+      this.props.fetchCurrentUserDetail(this.props.currentUser.id);
+      this.props.router.replace('/');
     });
   }
 

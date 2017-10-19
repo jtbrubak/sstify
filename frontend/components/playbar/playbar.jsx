@@ -7,7 +7,8 @@ class Playbar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { played: [], queue: [], status: 'pause', elapsed: 0 };
+    this.state = { played: [], queue: [], shuffled_queue: [],
+      status: 'pause', elapsed: 0 };
     this.nextTrack = this.nextTrack.bind(this);
     this.updateElapsed = this.updateElapsed.bind(this);
     this.changeVolume = this.changeVolume.bind(this);
@@ -21,6 +22,14 @@ class Playbar extends React.Component {
       return this.state.queue[0].url;
     } else {
       return "";
+    }
+  }
+
+  shuffleToggle() {
+    if (shuffled_queue.length > 0) {
+      this.setState({ shuffled_queue : 0 });
+    } else {
+      
     }
   }
 

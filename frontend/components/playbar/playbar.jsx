@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import PlayControls from './play_controls';
 import ScrollBar from './scroll_bar';
+import shuffle from 'shuffle-array';
 
 class Playbar extends React.Component {
 
@@ -26,10 +27,12 @@ class Playbar extends React.Component {
   }
 
   shuffleToggle() {
-    if (shuffled_queue.length > 0) {
-      this.setState({ shuffled_queue : 0 });
+    if (this.state.shuffled_queue.length > 0) {
+      this.setState({ shuffled_queue: [] });
     } else {
-      
+      var newQueue = [queue.shift];
+      newQueue.concat(shuffle(this.state.played.concat(this.state.queue)));
+      this.setState({ shuffled_queue: newQueue });
     }
   }
 

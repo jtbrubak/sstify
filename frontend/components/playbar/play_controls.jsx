@@ -51,6 +51,7 @@ class PlayControls extends React.Component {
     return(
       <div className="control-buttons">
         <i onClick={this.previousTrack} className="material-icons">skip_previous</i>
+        <i className="material-icons">shuffle</i>
         <i id="audio-play-button" onClick={this.play} className={this.playStatus()}>play_circle_outline</i>
         <i id="audio-pause-button" onClick={this.pause} className={this.pauseStatus()}>pause_circle_outline</i>
         <i onClick={this.playbar.nextTrack} className="material-icons">skip_next</i>

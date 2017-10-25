@@ -99,12 +99,10 @@ progress::-moz-progress-value {
 
 #audio-play-button {
   font-size: 36px;
-  /*margin: 0px 15px 0px 15px;*/
 }
 
 #audio-pause-button {
   font-size: 36px;
-  /*margin: 0px 15px 0px 15px;*/
 }
 
 .now-playing-info {

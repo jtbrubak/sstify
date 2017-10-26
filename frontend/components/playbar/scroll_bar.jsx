@@ -14,8 +14,8 @@ class ScrollBar extends React.Component {
     const timelineLeft = this.scrollbar.getBoundingClientRect().left;
     const clickPos = (e.clientX - timelineLeft) / timelineWidth;
 
-    this.playbar.audio.currentTime = this.playbar.audio.duration * clickPos;
-    this.playbar.setState({ elapsed: this.playbar.audio.currentTime });
+    this.props.audio.currentTime = this.props.audio.duration * clickPos;
+    this.playbar.setState({ elapsed: this.props.audio.currentTime });
   }
 
   renderLength(length) {
@@ -26,6 +26,7 @@ class ScrollBar extends React.Component {
   }
 
   render() {
+    debugger
     if (!this.playbar.state.queue) {
       return <div></div>;
     }
@@ -34,8 +35,8 @@ class ScrollBar extends React.Component {
         <div className="play-scroll-bar">
           <span>{this.renderLength(this.playbar.state.elapsed)}</span>
           <progress ref={ scrollbar => { this.scrollbar = scrollbar; } }
-            onClick={this.handleScrollClick} value={(this.playbar.state.elapsed/this.playbar.audio.duration) * 100} max="100"></progress>
-          <span>{this.renderLength(this.playbar.audio.duration)}</span>
+            onClick={this.handleScrollClick} value={(this.playbar.state.elapsed/this.props.audio.duration) * 100} max="100"></progress>
+          <span>{this.renderLength(this.props.audio.duration)}</span>
         </div>
       );
     } else {

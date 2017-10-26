@@ -82,6 +82,7 @@ class Playbar extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className="playbar">
         <audio onEnded={this.nextTrack}
@@ -92,7 +93,7 @@ class Playbar extends React.Component {
         {this.renderNowPlayingInfo()}
         <div className="play-controls">
           <PlayControls playbar={this}/>
-          <ScrollBar playbar={this}/>
+          <ScrollBar playbar={this} audio={this.audio}/>
         </div>
         <div className="volume-control">
           <i className="material-icons">volume_up</i>

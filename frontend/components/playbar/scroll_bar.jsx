@@ -19,6 +19,7 @@ class ScrollBar extends React.Component {
   }
 
   renderLength(length) {
+    if (length === NaN) { return "0:00" }
     if (this.props.audio) {
       const seconds = length % 60 < 10 ? `0${Math.floor(length % 60)}` : Math.floor(length % 60);
       return `${Math.floor(length / 60)}:${seconds}`;
@@ -26,7 +27,6 @@ class ScrollBar extends React.Component {
   }
 
   render() {
-    debugger
     if (!this.playbar.state.queue) {
       return <div></div>;
     }

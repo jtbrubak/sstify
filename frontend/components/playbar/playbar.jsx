@@ -82,7 +82,6 @@ class Playbar extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="playbar">
         <audio onEnded={this.nextTrack}

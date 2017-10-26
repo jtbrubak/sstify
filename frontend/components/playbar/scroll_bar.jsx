@@ -19,7 +19,6 @@ class ScrollBar extends React.Component {
   }
 
   renderLength(length) {
-    if (length === NaN) { return "0:00" }
     if (this.props.audio) {
       const seconds = length % 60 < 10 ? `0${Math.floor(length % 60)}` : Math.floor(length % 60);
       return `${Math.floor(length / 60)}:${seconds}`;
@@ -35,8 +34,8 @@ class ScrollBar extends React.Component {
         <div className="play-scroll-bar">
           <span>{this.renderLength(this.playbar.state.elapsed)}</span>
           <progress ref={ scrollbar => { this.scrollbar = scrollbar; } }
-            onClick={this.handleScrollClick} value={(this.playbar.state.elapsed/this.props.audio.duration) * 100} max="100"></progress>
-          <span>{this.renderLength(this.props.audio.duration)}</span>
+            onClick={this.handleScrollClick} value={(this.playbar.state.elapsed/this.playbar.state.queue[0].length) * 100} max="100"></progress>
+          <span>{this.renderLength(this.playbar.state.queue[0].length)}</span>
         </div>
       );
     } else {

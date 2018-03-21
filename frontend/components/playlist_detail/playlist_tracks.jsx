@@ -23,41 +23,38 @@ class PlaylistTracks extends React.Component {
   }
 
   render() {
-    debugger
-    if (this.props.playlist.tracks) {
-      return (
-        <div className="track-list">
-          <ol>
-            {this.props.playlist.tracks.map((track, i) =>
-              <li key={i+1} onDoubleClick={() => this.handleTrackButton(i)}>
-                <div className="playlist-track-display">
-                  <div className='before-track-name'>
-                    <button className='play-pause-button'>
-                      <span className='track-num'>{i+1}.</span>
-                      <span onClick={() => this.handleTrackButton(i)} className='play-button'></span>
-                    </button>
+    return (
+      <div className="track-list">
+        <ol>
+          {this.props.playlist.tracks.map((track, i) =>
+            <li key={i+1} onDoubleClick={() => this.handleTrackButton(i)}>
+              <div className="playlist-track-display">
+                <div className='before-track-name'>
+                  <button className='play-pause-button'>
+                    <span className='track-num'>{i+1}.</span>
+                    <span onClick={() => this.handleTrackButton(i)} className='play-button'></span>
+                  </button>
+                </div>
+                <div className="track-list-left-side">
+                  <div className="first-line">
+                    <span id="track-title">{track.title}</span>
                   </div>
-                  <div className="track-list-left-side">
-                    <div className="first-line">
-                      <span id="track-title">{track.title}</span>
-                    </div>
-                    <div className="second-line">
-                      <Link to={`/artist/${track.artist.id}`}><span>{track.artist.name}</span></Link>
-                      <span>·</span>
-                      <Link to={`album/${track.album.id}`}><span>{track.album.title}</span></Link>
-                    </div>
+                  <div className="second-line">
+                    <Link to={`/artist/${track.artist.id}`}><span>{track.artist.name}</span></Link>
+                    <span>·</span>
+                    <Link to={`album/${track.album.id}`}><span>{track.album.title}</span></Link>
                   </div>
                 </div>
-                <div className="track-list-right-side">
-                  <i onClick={() => this.removeTrack(track.id)} className="material-icons">delete</i>
-                  <span id="track-length">{this.renderLength(track)}</span>
-                </div>
-              </li>)
-            }
-          </ol>
-        </div>
-      );
-    } else { return (<div className="track-list"></div>); }
+              </div>
+              <div className="track-list-right-side">
+                <i onClick={() => this.removeTrack(track.id)} className="material-icons">delete</i>
+                <span id="track-length">{this.renderLength(track)}</span>
+              </div>
+            </li>)
+          }
+        </ol>
+      </div>
+    );
   }
 
 }

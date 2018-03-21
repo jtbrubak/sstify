@@ -19,7 +19,9 @@ class Sidebar extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    this.props.logout().then(() => this.props.router.replace('/login'));
+    this.props.logout().then(() => {
+      location.reload(true);
+    });
   }
 
   togglePlaylistForm() {

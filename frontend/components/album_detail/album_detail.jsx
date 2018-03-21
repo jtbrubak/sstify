@@ -29,22 +29,20 @@ class AlbumDetail extends React.Component {
   }
 
   renderDropdown(tracks) {
-    if (this.props.currentUserDetail.playlists) {
-      return (
-        <div>
-          <span>Add to Playlist</span>
-          <ul>
-            {
-              this.props.currentUserDetail.playlists.map((playlist) => (
-                <li onClick={() => this.addTracksToPlaylist(tracks, playlist.id)} key={playlist.id}>
-                  <Link>{playlist.title}</Link>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      );
-    }
+    return (
+      <div>
+        <span>Add to Playlist</span>
+        <ul>
+          {
+            this.props.currentUserDetail.playlists.map((playlist) => (
+              <li onClick={() => this.addTracksToPlaylist(tracks, playlist.id)} key={playlist.id}>
+                <Link>{playlist.title}</Link>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    );
   }
 
   addTracksToPlaylist(tracks, playlist_id) {
@@ -53,23 +51,21 @@ class AlbumDetail extends React.Component {
   }
 
   renderInfo(album) {
-    if (album.image_url) {
-      return (
-        <div className="left-side">
-          <img src={album.image_url}/><br/>
-          <span id="album-title">{album.title}<br/></span>
-          <span id="album-info">
-            By <Link to={`/artist/${album.artist.id}`}>{album.artist.name}</Link><br/>
-          </span>
-          <span id="album-info">{album.tracks.length} SONGS</span>
-          <button onClick={this.handleAlbumButton} className="play-album-button">PLAY</button>
-          <button className="playlist-add-button"  onClick={this.toggleAlbumDropdown}>. . .</button>
-          <div className={this.showAlbumDropdown()}>
-            {this.renderDropdown(album.tracks)}
-          </div>
+    return (
+      <div className="left-side">
+        <img src={album.image_url}/><br/>
+        <span id="album-title">{album.title}<br/></span>
+        <span id="album-info">
+          By <Link to={`/artist/${album.artist.id}`}>{album.artist.name}</Link><br/>
+        </span>
+        <span id="album-info">{album.tracks.length} SONGS</span>
+        <button onClick={this.handleAlbumButton} className="play-album-button">PLAY</button>
+        <button className="playlist-add-button"  onClick={this.toggleAlbumDropdown}>. . .</button>
+        <div className={this.showAlbumDropdown()}>
+          {this.renderDropdown(album.tracks)}
         </div>
-      );
-    }
+      </div>
+    );
   }
 
   render() {

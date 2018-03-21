@@ -1,6 +1,12 @@
 import { RECEIVE_CURRENT_USER_DETAIL } from '../actions/user_actions';
 
-const CurrentUserDetailReducer = (state = {}, action) => {
+const currentUserDefault = {
+  playlists: [],
+  followed_playlists: [],
+  followed_users: []
+}
+
+const CurrentUserDetailReducer = (state = currentUserDefault, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER_DETAIL:

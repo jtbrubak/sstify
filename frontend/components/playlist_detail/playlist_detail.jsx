@@ -30,16 +30,14 @@ class PlaylistDetail extends React.Component {
   }
 
   renderButton() {
-    if (this.props.currentUser) {
-      if (this.props.playlistDetail.user.id === this.props.currentUser.id) {
-        return (
-          <button className="play-playlist-button" onClick={this.handleDelete}>DELETE</button>
-        );
-      } else {
-        return (
-          <button className="play-playlist-button" onClick={this.toggleFollow}>{this.followStatus()}</button>
-        );
-      }
+    if (this.props.playlistDetail.user.id === this.props.currentUser.id) {
+      return (
+        <button className="play-playlist-button" onClick={this.handleDelete}>DELETE</button>
+      );
+    } else {
+      return (
+        <button className="play-playlist-button" onClick={this.toggleFollow}>{this.followStatus()}</button>
+      );
     }
   }
 
@@ -56,33 +54,29 @@ class PlaylistDetail extends React.Component {
   }
 
   followStatus() {
-    if (this.props.currentUserDetail) {
-      let status = "FOLLOW";
-      this.props.currentUserDetail.followed_playlists.forEach((playlist) => {
-        if ( playlist.id === this.props.playlistDetail.id) {
-          status = "UNFOLLOW";
-        }
-      });
-      return status;
-    }
+    let status = "FOLLOW";
+    this.props.currentUserDetail.followed_playlists.forEach((playlist) => {
+      if ( playlist.id === this.props.playlistDetail.id) {
+        status = "UNFOLLOW";
+      }
+    });
+    return status;
   }
 
   renderInfo(playlist) {
     const image_url = "http://greenlea.ru/Articles-Directory/Online-Dating-the-First-Step-Is-Your-Profile/i0099rp.jpg";
-    if (playlist.tracks) {
-      return (
-        <div className="left-side">
-          <img src={image_url}/><br/>
-          <span id="playlist-title">{playlist.title}<br/></span>
-          <span id="playlist-info">
-            By <Link to={`/user/${playlist.user.id}/playlists`}>{playlist.user.username}<br/></Link>
-          </span>
-          <span id="playlist-info">{playlist.tracks.length} SONGS</span>
-          <button onClick={this.handlePlaylistButton} className="play-playlist-button">PLAY</button>
-          {this.renderButton()}
-        </div>
-      );
-    }
+    return (
+      <div className="left-side">
+        <img src={image_url}/><br/>
+        <span id="playlist-title">{playlist.title}<br/></span>
+        <span id="playlist-info">
+          By <Link to={`/user/${playlist.user.id}/playlists`}>{playlist.user.username}<br/></Link>
+        </span>
+        <span id="playlist-info">{playlist.tracks.length} SONGS</span>
+        <button onClick={this.handlePlaylistButton} className="play-playlist-button">PLAY</button>
+        {this.renderButton()}
+      </div>
+    );
   }
 
   render() {

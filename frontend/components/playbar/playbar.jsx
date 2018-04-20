@@ -18,7 +18,6 @@ class Playbar extends React.Component {
   }
 
   currentTrack() {
-<<<<<<< HEAD
     // if (!this.state.queue) {
     //   return;
     // }
@@ -27,10 +26,6 @@ class Playbar extends React.Component {
     }
     else if (this.state.queue[0]) {
       return this.state.queue[0];
-=======
-    if (this.state.queue[0]) {
-      return this.state.queue[0].url;
->>>>>>> a159b869627cfe0f3375f4b27372d01e4d3118b4
     } else {
       return "";
     }

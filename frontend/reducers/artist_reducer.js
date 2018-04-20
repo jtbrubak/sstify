@@ -1,6 +1,12 @@
 import { RECEIVE_ARTIST_DETAIL } from '../actions/artist_actions';
 
-const ArtistReducer = (state = {}, action) => {
+const artistDefault = {
+  name: undefined,
+  image_url: undefined,
+  albums: []
+}
+
+const ArtistReducer = (state = artistDefault, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_ARTIST_DETAIL:

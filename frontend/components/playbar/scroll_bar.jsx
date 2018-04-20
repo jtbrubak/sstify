@@ -26,10 +26,14 @@ class ScrollBar extends React.Component {
   }
 
   render() {
+<<<<<<< HEAD
     if (!this.playbar.state.queue) {
       return <div></div>;
     }
     if (this.playbar.state.status === 'play') {
+=======
+    if (this.playbar.state.queue[0]) {
+>>>>>>> a159b869627cfe0f3375f4b27372d01e4d3118b4
       return (
         <div className="play-scroll-bar">
           <span>{this.renderLength(this.playbar.state.elapsed)}</span>

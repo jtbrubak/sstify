@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'ruby-mp3info', :require => 'mp3info'
-gem 'paperclip', '~>5.0.0'
+gem 'paperclip', '~>5.2.0'
 gem 'figaro'
 gem 'aws-sdk', '>=2.0'
 gem 'rails_12factor'

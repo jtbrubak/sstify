@@ -46,34 +46,31 @@ class TrackList extends React.Component {
   }
 
   render() {
-    if (this.props.album.tracks) {
-      return (
-        <div className="track-list">
-          <ol>
-            {
-              this.props.album.tracks.map((track, i) =>
-              <li key={i+1} onDoubleClick={() => this.handleTrackButton(i)}>
-                <div className="track-list-left-side">
-                  <button className='play-pause-button'>
-                    <span className='track-num'>{i+1}.</span>
-                    <span onClick={() => this.handleTrackButton(i)} className='play-button'></span>
-                  </button>
-                  <span id="track-title">{track.title}</span>
-                </div>
-                <div className="track-list-right-side">
-                  <button className="track-playlist-add-button"
-                    onClick={() => this.toggleTrackDropdown(i+1)}>. . .</button>
-                  <span id="track-length">{this.renderLength(track)}</span>
-                  {this.renderTrackDropdown(track, i+1)}
-                </div>
-              </li>)
-            }
-          </ol>
-        </div>
-      );
-    } else { return (<div></div>); }
+    return (
+      <div className="track-list">
+        <ol>
+          {
+            this.props.album.tracks.map((track, i) =>
+            <li key={i+1} onDoubleClick={() => this.handleTrackButton(i)}>
+              <div className="track-list-left-side">
+                <button className='play-pause-button'>
+                  <span className='track-num'>{i+1}.</span>
+                  <span onClick={() => this.handleTrackButton(i)} className='play-button'></span>
+                </button>
+                <span id="track-title">{track.title}</span>
+              </div>
+              <div className="track-list-right-side">
+                <button className="track-playlist-add-button"
+                  onClick={() => this.toggleTrackDropdown(i+1)}>. . .</button>
+                <span id="track-length">{this.renderLength(track)}</span>
+                {this.renderTrackDropdown(track, i+1)}
+              </div>
+            </li>)
+          }
+        </ol>
+      </div>
+    );
   }
-
 }
 
 export default TrackList;

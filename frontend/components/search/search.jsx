@@ -11,6 +11,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.state = { change: null };
   }
 
   componentWillMount() {
@@ -18,7 +19,14 @@ class Search extends React.Component {
   }
 
   handleChange(e) {
-    this.props.search({ search: { terms: e.currentTarget.value } });
+    if (this.state.change) {
+      clearTimeout(this.state.change);
+      this.setState({ change: null });
+    }
+    var terms = e.currentTarget.value;
+    this.setState({ change: setTimeout(() => {
+      this.props.search({ search: { terms: terms } })
+    }, 1000) });
   }
 
   render() {

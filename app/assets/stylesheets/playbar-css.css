@@ -25,6 +25,10 @@
   cursor: pointer;
 }
 
+.play-controls i.selected {
+  color: white;
+}
+
 .play-scroll-bar {
   display: flex;
   align-items: center;

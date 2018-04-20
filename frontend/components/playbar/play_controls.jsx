@@ -9,6 +9,7 @@ class PlayControls extends React.Component {
     this.pause = this.pause.bind(this);
     this.play = this.play.bind(this);
     this.playClass = this.playClass.bind(this);
+    this.buttonClass = this.buttonClass.bind(this);
   }
 
   previousTrack() {
@@ -38,15 +39,19 @@ class PlayControls extends React.Component {
     }
   }
 
+  buttonClass(button) {
+    return this.playbar.state[button] ? "material-icons selected" : "material-icons"
+  }
+
   render() {
     return (
       <div className="control-buttons">
-        <i className="material-icons">shuffle</i>
+        <i className={this.buttonClass('shuffle')}>shuffle</i>
         <i onClick={this.previousTrack} className="material-icons">skip_previous</i>
         <i id="audio-play-button" onClick={this.play} className={this.playClass('play')}>play_circle_outline</i>
         <i id="audio-pause-button" onClick={this.pause} className={this.playClass('pause')}>pause_circle_outline</i>
-        <i onClick={this.playbar.nextTrack} className="material-icons">skip_next</i>
-        <i className="material-icons">repeat</i>
+        <i onClick={this.playbar.nextTrack} className={"material-icons"}>skip_next</i>
+        <i onClick={this.playbar.toggleRepeat} className={this.buttonClass('repeat')}>repeat</i>
       </div>
     );
   }
